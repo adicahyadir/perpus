@@ -1,0 +1,18 @@
+<?=base_url('assets/');?>
+
+   <!-- awal menu -->
+       <?php $this->load->view('v_menu');?> 
+       <!-- akhir menu -->
+
+<section class="content">
+ <!-- Page Heading -->
+ <div class="container-fluid">
+
+ </div>
+</section>
+
+fileld anggota
+nama
+jenis kelamin
+kelas
+no hp
