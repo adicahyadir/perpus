@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2021 at 06:15 AM
+-- Generation Time: Aug 16, 2021 at 07:35 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -29,12 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `anggota` (
   `id_anggota` varchar(10) NOT NULL,
+  `nis` varchar(30) NOT NULL,
   `nama_anggota` varchar(50) NOT NULL,
   `jenkel` varchar(20) NOT NULL,
   `kelas` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
   `no_hp` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
+('AG001', '5520118048', 'Adi Cahyadi', 'Laki-Laki', 'Kelas 8', 'Cipanas', '08xxxxxxxxxxxx');
 
 -- --------------------------------------------------------
 

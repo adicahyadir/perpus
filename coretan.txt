@@ -16,3 +16,11 @@ nama
 jenis kelamin
 kelas
 no hp
+
+<th>id Anggota</th>
+<th>NIS</th>
+<th>Nama</th>
+<th>Jenis Kelamin</th>
+<th>Kelas</th>
+<th>Alamat</th>
+<th>No HP</th>

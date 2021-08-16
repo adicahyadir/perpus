@@ -6,6 +6,9 @@
             href="#">MTs Sa Miftahul Falah</a>.</p>
 
     <!-- DataTales Example -->
+    <div class=" mb-4" style="position: float-right">
+            <a href="#" class="btn btn-success ">Tambah</a>
+    </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tabel Buku</h6>
