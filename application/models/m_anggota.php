@@ -20,4 +20,15 @@ class M_anggota extends CI_Model{
 		return $kodejadi;
 
 	}
+
+	public function edit($id)
+	{
+		$this->db->where('id_anggota',$id);
+		return $this->db->get('anggota')->row_array();
+	}
+	
+	public function hapus($id)
+	{
+		
+	}
 }

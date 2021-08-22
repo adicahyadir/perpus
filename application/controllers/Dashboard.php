@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		$this->m_squrity->getSqurity();
 		$isi['content'] = 'v_home';
-		// $isi['judul']	= 'Dashboard';
+		$isi['profile']	= 'Halo, Admin';
 		$this->load->view('v_dashboard',$isi);
 	}
 	
