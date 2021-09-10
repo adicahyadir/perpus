@@ -8,14 +8,5 @@ class Buku extends CI_Controller {
 		$isi['content'] = 'master/v_databuku';
 		$this->load->view('v_dashboard', $isi);
 	}
-	public function rak()
-	{
-		$isi['content'] = 'master/v_rak';
-		$this->load->view('v_dashboard', $isi);
-	}
-	public function kategori()
-	{
-		$isi['content'] = 'master/v_kategori';
-		$this->load->view('v_dashboard', $isi);
-	}
+	
 }

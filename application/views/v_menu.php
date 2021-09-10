@@ -14,11 +14,26 @@
     <!-- <div class="sidebar-heading">
         Interface
     </div> -->
-    <li class="nav-item">
+   <!--  <li class="nav-item">
         <a class="nav-link" href="<?= base_url()?>anggota">
             <i class="fas fa-user-plus"></i>
             <span>Data Anggota</span></a>
+    </li> -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengguna"
+            aria-expanded="true" aria-controls="pengguna">
+            <i class="fas fa-user-plus"></i>
+            <span>Data Pengguna</span>
+        </a>
+        <div id="pengguna" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Pengguna</h6>
+                <a class="collapse-item" href="#">Petugas</a>
+                <a class="collapse-item" href="<?= base_url()?>anggota">Anggota</a>
+            </div>
+        </div>
     </li>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -30,8 +45,11 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Master Buku</h6>
                 <a class="collapse-item" href="<?= base_url()?>Buku">Data Buku</a>
-                <a class="collapse-item" href="<?= base_url()?>Buku/rak">Rak Buku</a>
+                <a class="collapse-item" href="<?= base_url()?>Rak">Rak Buku</a>
                 <a class="collapse-item" href="<?= base_url()?>Buku/kategori">Kategori Buku</a>
+                <a class="collapse-item" href="#">Penerbit</a>
+                <a class="collapse-item" href="#">Pengarang</a>
+                <a class="collapse-item" href="#">Bahasa</a>
             </div>
         </div>
     </li>
