@@ -5,7 +5,7 @@
     <p class="mb-4">Jumlah Rak Perpustakaan </p>
 
     <!-- DataTales Example -->
-    <div class=" mb-4" style="position: float-right">
+    <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
     </div>
     <div class="card shadow mb-4">
@@ -32,8 +32,8 @@
                             <td><?= $row->nama_rak;?></td>
                             <td><?= $row->baris_rak;?></td>
                             <td>
-                                <a href="<?= base_url()?>rak/edit/<?= $row->id_rak;?>" data-toggle="modal" data-target="#exampleModal2"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
-                                <a href="<?= base_url()?>rak/hapus/<?= $row->id_rak;?>" onclick="return confirm('Hapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
+                                <a href="<?= base_url()?>rak/edit/<?= $row->id_rak;?>"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
+                                <a href="<?= base_url()?>rak/hapus/<?= $row->id_rak;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
                             </td>
                         </tr>
                     <?php } ?>

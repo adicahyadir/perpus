@@ -12,16 +12,16 @@ class Rak extends CI_Controller {
 	public function index()
 	{
 		$isi['content'] = 'master/rak/v_rak';
-		// $isi['judul']   = 'Rak Buku';
+		$isi['title']   = 'Rak Buku';
 		$isi['data'] = $this->db->get('rak')->result();
 		$this->load->view('v_dashboard', $isi);
 	}
-	public function tambah_rak()
-	{
-	    $isi['content'] = 'master/rak/form_rak';
-		$isi['judul']   = 'Form tambah Rak Buku';
-		$this->load->view('v_dashbord', $isi);
-	}
+	// public function tambah_rak()
+	// {
+	//     $isi['content'] = 'master/rak/form_rak';
+	// 	$isi['judul']   = 'Form tambah Rak Buku';
+	// 	$this->load->view('v_dashbord', $isi);
+	// }
 	public function simpan()
 	{
 		$data['nama_rak'] = $this->input->post('nama_rak');
@@ -50,9 +50,11 @@ class Rak extends CI_Controller {
 
 	public function edit($id)
 	{
+		$isi['content'] = 'master/rak/edit_rak';
+		$isi['judul'] = 'Form Edit Rak' ;
 		$isi['data'] = $this->m_rak->edit($id);
 		$this->load->view('v_dashboard', $isi);
-		$data = $this->id_rak;
+		
 	}
 
 	public function hapus($id)

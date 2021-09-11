@@ -7,18 +7,7 @@
             <span>Dashboard</span></a>
     </li>
 
-    <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
-
-    <!-- Heading -->
-    <!-- <div class="sidebar-heading">
-        Interface
-    </div> -->
-   <!--  <li class="nav-item">
-        <a class="nav-link" href="<?= base_url()?>anggota">
-            <i class="fas fa-user-plus"></i>
-            <span>Data Anggota</span></a>
-    </li> -->
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengguna"
             aria-expanded="true" aria-controls="pengguna">
@@ -46,10 +35,10 @@
                 <h6 class="collapse-header">Master Buku</h6>
                 <a class="collapse-item" href="<?= base_url()?>Buku">Data Buku</a>
                 <a class="collapse-item" href="<?= base_url()?>Rak">Rak Buku</a>
-                <a class="collapse-item" href="<?= base_url()?>Buku/kategori">Kategori Buku</a>
-                <a class="collapse-item" href="#">Penerbit</a>
-                <a class="collapse-item" href="#">Pengarang</a>
-                <a class="collapse-item" href="#">Bahasa</a>
+                <a class="collapse-item" href="<?= base_url()?>kategori">Kategori Buku</a>
+                <a class="collapse-item" href="<?= base_url()?>penerbit">Penerbit</a>
+                <a class="collapse-item" href="<?= base_url()?>pengarang">Pengarang</a>
+                <a class="collapse-item" href="<?= base_url()?>bahasa">Bahasa</a>
             </div>
         </div>
     </li>
