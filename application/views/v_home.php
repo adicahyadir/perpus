@@ -1,19 +1,26 @@
 <section class="content">
-	 <!-- Begin Page Content -->
-	 
-                <div class="container-fluid">
+	<style type="text/css">
+  .col-md-6{
+    text-align: center;
+  }
+  .satu{
+    margin-top: 15%;
+  }
+  .dua{
+    margin-top: 13%;
+  }
+</style>
 
-                   <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-
-                       <!--  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
-                    </div>
-
-                
-                </div>
-                <!-- /.container-fluid -->
+<div class="row">
+  <div class="col-md-6 satu">
+    <h1>" Perpustakaan </h1>
+    <h1>MTs Sa Miftahul Falah </h1>
+    <h1>Cianjur "</h1>
+  </div>
+<!--   <div class="col-md-6 dua">
+    <img src="<?=base_url() ?>assets/gambar/logocugenang.png" alt="LOGO" width="280px">
+  </div> -->  
+</div>
 
           
 </section>

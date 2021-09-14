@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2021 at 08:43 AM
+-- Generation Time: Sep 14, 2021 at 04:59 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `anggota` (
-  `id_anggota` varchar(10) NOT NULL,
-  `nis` varchar(30) NOT NULL,
+  `id_anggota` int(11) NOT NULL,
+  `nis` int(11) NOT NULL,
   `nama_anggota` varchar(50) NOT NULL,
-  `jenkel` varchar(20) NOT NULL,
-  `kelas` varchar(20) NOT NULL,
+  `jenkel` varchar(10) NOT NULL,
+  `kelas` varchar(7) NOT NULL,
   `alamat` text NOT NULL,
-  `no_hp` varchar(15) NOT NULL
+  `no_hp` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,8 +42,9 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
-('AG001', '5520118048', 'Adi Cahyadi', 'Laki-Laki', 'Kelas 7', 'Jalan Desa Sukanagalih', '08xxxxxxxxxx'),
-('AG002', '5520118047', 'rahmen', 'Laki-Laki', 'Kelas_8', 'Cianjur', '08xxxxxxxxxx');
+(1, 123, 'Cahyani', 'Perempuan', 'Kelas 7', 'Cipanas', '089663892112'),
+(3, 1232, 'Adi Cahyadi', 'Laki-Laki', 'kelas 7', 'Cibadak', '089763728172'),
+(4, 1234, 'rahmen', 'Laki-Laki', 'Kelas 9', 'KP. PASIRHINGKIK', '081237476152');
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,8 @@ INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
 -- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
-  ADD PRIMARY KEY (`id_anggota`);
+  ADD PRIMARY KEY (`id_anggota`),
+  ADD UNIQUE KEY `nis` (`nis`);
 
 --
 -- Indexes for table `bahasa`
@@ -220,6 +222,12 @@ ALTER TABLE `rak`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bahasa`
