@@ -36,9 +36,7 @@ class Kategori extends CI_Controller {
 	{
 		$id_kategori = $this->input->post('id_kategori');
 		$data = array(
-			// 'id_kategori' => $this->input->post('id_kategori'),
-			'nama_kategori' => $this->input->post('nama_kategori'),
-			
+			'nama_kategori' => $this->input->post('nama_kategori')
 		);
 		$query = $this->m_kategori->update($id_kategori, $data);
 		if ($query = true) {
@@ -50,7 +48,8 @@ class Kategori extends CI_Controller {
 	public function edit($id)
 	{
 		$isi['content'] = 'master/kategori/edit_kategori';
-		$isi['judul'] = 'Form Edit Kategori' ;
+		$isi['judul'] = 'Form Edit Kategori';
+		$isi['title'] = 'Form Edit Kategori';
 		$isi['data'] = $this->m_kategori->edit($id);
 		$this->load->view('v_dashboard', $isi);
 		

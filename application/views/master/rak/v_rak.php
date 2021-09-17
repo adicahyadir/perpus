@@ -77,39 +77,5 @@
   </div>
 </div>
 
-<!-- Edit -->
-<!-- <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Rak</h5>
-      </div>
-      <form method="post" action="<?= base_url()?>rak/update" class="form-horizontal" >
-        <div class="modal-body">
-          <div class="col-md-12">
-            <div class="box-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail2">id Rak</label>
-                    <input type="text" name="id_rak" value="<?= $data['id_rak']?>" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  readonly>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Nama Rak</label>
-                    <input type="text" name="nama_rak" value="<?= $data['nama_rak']?>" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  required>
-                </div>
-                 <div class="form-group">
-                    <label for="exampleInputEmail2">Baris Rak</label>
-                    <input type="text" name="baris_rak" value="<?= $data['baris_rak']?>" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required>
-                </div>
-            </div>
-          </div>        
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
-        </div>
-      </form>
 
-    </div>
-  </div>
-</div> -->
 </section>

@@ -33,8 +33,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Master Buku</h6>
-                <a class="collapse-item" href="<?= base_url()?>Buku">Data Buku</a>
-                <a class="collapse-item" href="<?= base_url()?>Rak">Rak Buku</a>
+                <a class="collapse-item" href="<?= base_url()?>databuku">Data Buku</a>
+                <a class="collapse-item" href="<?= base_url()?>rak">Rak Buku</a>
                 <a class="collapse-item" href="<?= base_url()?>kategori">Kategori Buku</a>
                 <a class="collapse-item" href="<?= base_url()?>penerbit">Penerbit</a>
                 <a class="collapse-item" href="<?= base_url()?>pengarang">Pengarang</a>

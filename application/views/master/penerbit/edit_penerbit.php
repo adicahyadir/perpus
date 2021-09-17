@@ -8,7 +8,7 @@
             <h3 class="m-0 font-weight-bold text-primary"><?= $judul;?></h6>
      </div>
  
-    <form method="post" action="<?= base_url()?>kategori/update" class="form-horizontal" >
+    <form method="post" action="<?= base_url()?>penerbit/update" class="form-horizontal" >
       <div class="box-body">
         
         <div class="form-group">

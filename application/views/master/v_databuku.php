@@ -2,95 +2,107 @@
  <!-- Page Heading -->
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Data Buku</h1>
-    <p class="mb-4">Buku yang terdaftar di Perpustakaan <a target="_blank"
-            href="#">MTs Sa Miftahul Falah</a>.</p>
+    <p class="mb-4">Daftar Buku Perpustakaan</p>
 
     <!-- DataTales Example -->
-    <div class=" mb-4" style="position: float-right">
-            <a href="#" class="btn btn-success ">Tambah</a>
+    <div class="mb-4" style="position: float-right">
+            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tabel Buku</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>Nama</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Kelas</th>
-                            <th>Alamat</th>
-                            <th>No HP</th>
-                            <th>AKSI</th>
+                            <th>Buku Id</th>
+                            <th>No Isbn</th>
+                            <th>Judul</th>
+                            <th>Pengarang</th>
+                            <th>Tahun</th>
+                            <th>Halaman</th>
+                            <th>Penerbit</th>
+                            <th>Bahasa</th>
+                            <th>Kategori</th>
+                            <th>Rak</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                         	<th>id</th>
-                            <th>Nama</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Kelas</th>
-                            <th>Alamat</th>
-                            <th>No HP</th>
-                            <th>AKSI</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2012/03/29</td>
-                            <td>$433,060</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                            <td>$162,700</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2012/12/02</td>
-                            <td>$372,000</td>
-                        </tr>
+                    
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
   </div>
+
+  <!-- Modal tambah-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Buku</h5>
+      </div>
+      <form method="post" action="<?= base_url()?>databuku/simpan" class="form-horizontal" >
+        <div class="modal-body">
+          <div class="col-md-12">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Buku Id</label>
+                    <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+                </div>
+                 <div class="form-group">
+                    <label for="exampleInputEmail1">Isbn</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Judul</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Pengarang</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tahun</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Halaman</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Penerbit</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Bahasa</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kategori</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Rak</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                </div>
+
+            </div>
+          </div>        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
 </section>

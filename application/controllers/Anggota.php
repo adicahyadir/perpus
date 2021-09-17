@@ -18,7 +18,7 @@ class Anggota extends CI_Controller {
 	}
 	public function simpan()
 	{
-			
+
 		$data['nis'] = $this->input->post('nis');
 		$data['nama_anggota'] = $this->input->post('nama_anggota');
 		$data['jenkel'] = $this->input->post('jenkel');
@@ -44,11 +44,13 @@ class Anggota extends CI_Controller {
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('no_hp')
 		);
-		$query = $this->m_anggota->update($id_anggota, $data);
-		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
-			redirect('anggota');
-		}
+		 $this->db->set($data);
+    	$this->db->insert($this->db->dbprefix . 'anggota');
+		// $query = $this->m_anggota->update($id_anggota, $data);
+		// if ($query = true) {
+		// 	$this->session->set_flashdata('info','Data Berhasil di Ubah');
+		// 	redirect('anggota');
+		// }
 	}
 	public function edit($id)
 	{

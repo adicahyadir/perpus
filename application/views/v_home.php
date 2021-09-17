@@ -17,9 +17,9 @@
     <h1>MTs Sa Miftahul Falah </h1>
     <h1>Cianjur "</h1>
   </div>
-<!--   <div class="col-md-6 dua">
-    <img src="<?=base_url() ?>assets/gambar/logocugenang.png" alt="LOGO" width="280px">
-  </div> -->  
+ <div class="col-md-6 dua">
+    <img src="<?=base_url() ?>assets/gambar/logo-mts.jpg" alt="LOGO" width="380px">
+  </div>  
 </div>
 
           
