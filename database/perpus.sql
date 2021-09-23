@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2021 at 04:59 AM
+-- Generation Time: Sep 23, 2021 at 06:12 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `anggota` (
   `id_anggota` int(11) NOT NULL,
-  `nis` int(11) NOT NULL,
+  `nis` varchar(11) NOT NULL,
   `nama_anggota` varchar(50) NOT NULL,
   `jenkel` varchar(10) NOT NULL,
   `kelas` varchar(7) NOT NULL,
@@ -42,9 +42,11 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
-(1, 123, 'Cahyani', 'Perempuan', 'Kelas 7', 'Cipanas', '089663892112'),
-(3, 1232, 'Adi Cahyadi', 'Laki-Laki', 'kelas 7', 'Cibadak', '089763728172'),
-(4, 1234, 'rahmen', 'Laki-Laki', 'Kelas 9', 'KP. PASIRHINGKIK', '081237476152');
+(18, '5520118048', 'Adi Cahyadi', 'Laki-Laki', 'Kelas 7', 'Cimacan', '0899928922'),
+(19, '5520118046', 'Santi S', 'Perempuan', 'Kelas 9', 'Colibah', '08122356789'),
+(21, '5520118047', 'Cahyani', 'Perempuan', 'Kelas 7', 'Surabaya', '08898900123'),
+(22, '5520118040', 'Rully', 'Laki-Laki', 'Kelas 7', 'KP. PASIRHINGKIK', '081234567855'),
+(23, '5520118042', 'rahmen', 'Laki-Laki', 'Kelas 9', 'KP. NYALINDUNG', '08928268888');
 
 -- --------------------------------------------------------
 
@@ -62,10 +64,30 @@ CREATE TABLE `bahasa` (
 --
 
 INSERT INTO `bahasa` (`id_bahasa`, `nama_bahasa`) VALUES
-(1, 'B.Indonesia'),
-(2, 'B.inggris'),
-(3, 'B.Arab'),
-(4, 'B.Jepang');
+(12, 'Arabic'),
+(15, 'Indonesia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `databuku`
+--
+
+CREATE TABLE `databuku` (
+  `id_buku` int(11) NOT NULL,
+  `buku_id` varchar(225) NOT NULL,
+  `isbn` varchar(50) NOT NULL,
+  `judul` varchar(250) NOT NULL,
+  `tahun` date NOT NULL,
+  `halaman` varchar(225) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `id_pengarang` int(11) NOT NULL,
+  `id_penerbit` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_rak` int(11) NOT NULL,
+  `id_bahasa` int(11) NOT NULL,
+  `gambar` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -168,9 +190,7 @@ CREATE TABLE `rak` (
 INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
 (9, 'Rak 1', 'Baris 1'),
 (10, 'Rak 2', 'Baris 2'),
-(11, 'Rak 3', 'Baris 3'),
-(12, 'Rak 4', 'Baris 4'),
-(13, 'Rak 6', 'Baris 6');
+(11, 'Rak 5', 'Baris 9');
 
 --
 -- Indexes for dumped tables
@@ -180,14 +200,24 @@ INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
 -- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
-  ADD PRIMARY KEY (`id_anggota`),
-  ADD UNIQUE KEY `nis` (`nis`);
+  ADD PRIMARY KEY (`id_anggota`);
 
 --
 -- Indexes for table `bahasa`
 --
 ALTER TABLE `bahasa`
   ADD PRIMARY KEY (`id_bahasa`);
+
+--
+-- Indexes for table `databuku`
+--
+ALTER TABLE `databuku`
+  ADD PRIMARY KEY (`id_buku`),
+  ADD KEY `id_penerbit` (`id_penerbit`),
+  ADD KEY `id_pengarang` (`id_pengarang`),
+  ADD KEY `id_kategori` (`id_kategori`),
+  ADD KEY `id_rak` (`id_rak`),
+  ADD KEY `id_bahasa` (`id_bahasa`);
 
 --
 -- Indexes for table `kategori`
@@ -227,13 +257,13 @@ ALTER TABLE `rak`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `bahasa`
 --
 ALTER TABLE `bahasa`
-  MODIFY `id_bahasa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_bahasa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -264,6 +294,20 @@ ALTER TABLE `pengarang`
 --
 ALTER TABLE `rak`
   MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `databuku`
+--
+ALTER TABLE `databuku`
+  ADD CONSTRAINT `id_bahasa` FOREIGN KEY (`id_bahasa`) REFERENCES `bahasa` (`id_bahasa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_penerbit` FOREIGN KEY (`id_penerbit`) REFERENCES `penerbit` (`id_penerbit`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_pengarang` FOREIGN KEY (`id_pengarang`) REFERENCES `pengarang` (`id_pengarang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_rak` FOREIGN KEY (`id_rak`) REFERENCES `rak` (`id_rak`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

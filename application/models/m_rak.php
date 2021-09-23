@@ -1,7 +1,7 @@
 <?php
 
- class M_rak Extends CI_Model{
- 	
+class M_rak Extends CI_Model{
+ 	 
  	public function edit($id)
 	{
 		$this->db->where('id_rak', $id);

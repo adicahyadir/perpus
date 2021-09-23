@@ -3,7 +3,7 @@
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Keanggotaan</h1>
     <p class="mb-4">Daftar anggota Perpustakaan </p>
-
+ 
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
@@ -17,7 +17,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
+                            <th>No</th>
                             <th>Nis</th>
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>

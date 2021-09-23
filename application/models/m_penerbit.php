@@ -10,7 +10,7 @@ class M_penerbit Extends CI_Model{
 	public function update($id_penerbit, $data)
 	{
 		$this->db->where('id_penerbit', $id_penerbit);
-		$this->db->update('penerbit');
+		$this->db->update('penerbit', $data);
 	}
 	public function hapus($id)
 	{

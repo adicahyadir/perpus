@@ -11,12 +11,12 @@
     <form method="post" action="<?= base_url()?>penerbit/update" class="form-horizontal" >
       <div class="box-body">
         
-        <div class="form-group">
+       <!--  <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Id Penerbit</label>
           <div class="col-sm-10">
             <input type="text" name="id_penerbit" value="<?= $data['id_penerbit'] ?>" class="form-control" readonly>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Nama Penerbit</label>

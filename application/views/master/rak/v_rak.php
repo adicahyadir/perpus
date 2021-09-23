@@ -16,8 +16,8 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
-                            <th>id</th>
+                        <tr> 
+                            <th>No</th>
                             <th>Rak</th>
                             <th>Baris Rak</th>
                             <th>Aksi</th>

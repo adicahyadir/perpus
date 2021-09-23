@@ -10,7 +10,7 @@ class M_pengarang Extends CI_Model{
 	public function update($id_pengarang, $data)
 	{
 		$this->db->where('id_pengarang', $id_pengarang);
-		$this->db->update('pengarang');
+		$this->db->update('pengarang' , $data);
 	}
 	public function hapus($id)
 	{

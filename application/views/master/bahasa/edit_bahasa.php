@@ -12,13 +12,6 @@
       <div class="box-body">
         
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Id Bahasa</label>
-          <div class="col-sm-10">
-            <input type="text" name="id_bahasa" value="<?= $data['id_bahasa'] ?>" class="form-control" readonly>
-          </div>
-        </div>
-
-        <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Nama Bahasa</label>
           <div class="col-sm-10">
             <input type="text" name="nama_bahasa" class="form-control" value="<?= $data['nama_bahasa'] ?>" required>

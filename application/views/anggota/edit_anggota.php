@@ -7,12 +7,12 @@
     <div class="card-header py-3">
             <h3 class="m-0 font-weight-bold text-primary"><?= $judul;?></h6>
      </div>
- 
+  
     <form method="post" action="<?= base_url()?>anggota/update" class="form-horizontal" >
       <div class="box-body">
         
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Id Anggota</label>
+          <label for="inputPassword3" class="col-sm-2 control-label">No Anggota</label>
           <div class="col-sm-10">
             <input type="text" name="id_anggota" value="<?= $data['id_anggota'] ?>" class="form-control" readonly>
           </div>

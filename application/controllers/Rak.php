@@ -16,12 +16,7 @@ class Rak extends CI_Controller {
 		$isi['data'] = $this->db->get('rak')->result();
 		$this->load->view('v_dashboard', $isi);
 	}
-	// public function tambah_rak()
-	// {
-	//     $isi['content'] = 'master/rak/form_rak';
-	// 	$isi['judul']   = 'Form tambah Rak Buku';
-	// 	$this->load->view('v_dashbord', $isi);
-	// }
+	
 	public function simpan()
 	{
 		$data['nama_rak'] = $this->input->post('nama_rak');

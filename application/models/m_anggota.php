@@ -1,7 +1,7 @@
 <?php
 
 class M_anggota extends CI_Model{
-	
+	  
 	public function edit($id)
 	{
 		$this->db->where('id_anggota', $id);
