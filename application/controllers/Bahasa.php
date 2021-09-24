@@ -32,7 +32,10 @@ class Bahasa extends CI_Controller {
 	
 	public function simpan()
 	{ 
-		$data['nama_bahasa'] = $this->input->post('nama_bahasa');
+		$data = array(
+			'id_bahasa' => $this->input->post('id_bahasa'),
+			'nama_bahasa' => $this->input->post('nama_bahasa')
+		);
 		$this->db->insert('bahasa', $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');

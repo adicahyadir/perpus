@@ -10,8 +10,14 @@
  
     <form method="post" action="<?= base_url()?>kategori/update" class="form-horizontal" >
       <div class="box-body">
-        
 
+      <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">No-Kategori</label>
+          <div class="col-sm-10">
+            <input type="text" name="id_kategori" value="<?= $data['id_kategori'] ?>" class="form-control" readonly>
+          </div>
+        </div>
+        
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Nama Kategori</label>
           <div class="col-sm-10">

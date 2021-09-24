@@ -32,7 +32,11 @@ class Pengarang extends CI_Controller {
 
 	public function simpan()
 	{
-		$data['nama_pengarang'] = $this->input->post('nama_pengarang');
+		$data = array(
+			'id_pengarang' => $this->input->post('id_pengarang'),
+			'nama_pengarang' => $this->input->post('nama_pengarang')
+			
+		);
 		$this->db->insert('pengarang', $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');

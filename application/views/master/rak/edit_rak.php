@@ -10,9 +10,9 @@
  
     <form method="post" action="<?= base_url()?>rak/update" class="form-horizontal" >
       <div class="box-body">
-        
+
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Id rak</label>
+          <label for="inputPassword3" class="col-sm-2 control-label">Rak</label>
           <div class="col-sm-10">
             <input type="text" name="id_rak" value="<?= $data['id_rak'] ?>" class="form-control" readonly>
           </div>

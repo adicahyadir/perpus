@@ -32,8 +32,10 @@ class Kategori extends CI_Controller {
 	
 	public function simpan()
 	{
-		$data['nama_kategori'] = $this->input->post('nama_kategori');
-
+		$data = array(
+			'id_kategori' => $this->input->post('id_kategori'),
+			'nama_kategori' => $this->input->post('nama_kategori')
+		);
 		$this->db->insert('kategori', $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');

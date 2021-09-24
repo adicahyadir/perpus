@@ -15,7 +15,6 @@ class Anggota extends CI_Controller {
 
 	public function index()
 	{
-		
 		if($this->m_admin->logged_id())
 		{
 			$isi['content'] = 'anggota/v_anggota';
@@ -59,8 +58,7 @@ class Anggota extends CI_Controller {
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('no_hp')
 		);
-		// $this->db->set($data);
-  //   	$this->db->insert($this->db->dbprefix . 'anggota');
+
 		$query = $this->m_anggota->update($id_anggota, $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info','Data Berhasil di Ubah');

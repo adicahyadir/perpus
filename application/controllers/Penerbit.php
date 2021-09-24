@@ -33,8 +33,11 @@ class Penerbit extends CI_Controller {
 	
 	public function simpan()
 	{
-		$data['nama_penerbit'] = $this->input->post('nama_penerbit');
-		$data['alamat'] = $this->input->post('alamat');
+		$data = array(
+			'id_penerbit' => $this->input->post('id_penerbit'),
+			'nama_penerbit' => $this->input->post('nama_penerbit'),
+			'alamat' => $this->input->post('alamat')
+		);
 		$this->db->insert('penerbit', $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
@@ -46,9 +49,9 @@ class Penerbit extends CI_Controller {
 	{
 		$id_penerbit = $this->input->post('id_penerbit');
 		$data = array(
-			// 'id_penerbit' => $this->input->post('id_penerbit'),
+			'id_penerbit' => $this->input->post('id_penerbit'),
 			'nama_penerbit' => $this->input->post('nama_penerbit'),
-			'alamat' => $this->input->post('alamat'),
+			'alamat' => $this->input->post('alamat')
 		);
 		$query = $this->m_penerbit->update($id_penerbit, $data);
 		if ($query = true) {

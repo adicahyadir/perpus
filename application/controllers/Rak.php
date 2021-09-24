@@ -14,8 +14,7 @@ class Rak extends CI_Controller {
 	}
 
 	public function index()
-	{
-		
+	{ 
 		if($this->m_admin->logged_id())
 		{
 			$isi['content'] = 'master/rak/v_rak';
@@ -33,8 +32,11 @@ class Rak extends CI_Controller {
 	
 	public function simpan()
 	{
-		$data['nama_rak'] = $this->input->post('nama_rak');
-		$data['baris_rak'] = $this->input->post('baris_rak');
+		$data = array(
+			'id_rak' => $this->input->post('id_rak'),
+			'nama_rak' => $this->input->post('nama_rak'),
+			'baris_rak' => $this->input->post('baris_rak')
+		);
 		$this->db->insert('rak', $data);
 		if ($query = true) {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
@@ -61,6 +63,7 @@ class Rak extends CI_Controller {
 	{
 		$isi['content'] = 'master/rak/edit_rak';
 		$isi['judul'] = 'Form Edit Rak' ;
+		$isi['title']   = 'Edit Rak Buku';
 		$isi['data'] = $this->m_rak->edit($id);
 		$this->load->view('v_dashboard', $isi);
 		
