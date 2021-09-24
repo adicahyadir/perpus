@@ -54,9 +54,9 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Transaksi</h6>
-                <a class="collapse-item" href="<?= base_url()?>Transaksi">Peminjaman</a>
-                <a class="collapse-item" href="<?= base_url()?>Transaksi/pengembalian">Pengembalian</a>
-                <a class="collapse-item" href="<?= base_url()?>Transaksi/denda">Denda</a>
+                <a class="collapse-item" href="<?= base_url()?>Peminjaman">Peminjaman</a>
+                <a class="collapse-item" href="<?= base_url()?>Pengembalian">Pengembalian</a>
+                <a class="collapse-item" href="<?= base_url()?>Denda">Denda</a>
             </div>
         </div>
     </li>

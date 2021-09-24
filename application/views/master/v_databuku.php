@@ -15,9 +15,9 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                    <thead> 
                         <tr>
-                            <th>Buku Id</th>
+                            <th>No</th>
                             <th>No Isbn</th>
                             <th>Judul</th>
                             <th>Pengarang</th>
@@ -31,7 +31,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+                      <?php foreach ($data as $key => $value) { ?>
+                      <tr>
+                        <td><?= $key + 1 ?></td>
+                        <td><?= $value['isbn'] ?></td>
+                        <td><?= $value['judul'] ?></td>
+                        <td><?= $value['nama_pengarang'] ?></td>
+                        <td><?= $value['tahun'] ?></td>
+                        <td><?= $value['halaman'] ?></td>
+                        <td><?= $value['nama_penerbit'] ?></td>
+                        <td><?= $value['nama_bahasa'] ?></td>
+                        <td><?= $value['nama_kategori'] ?></td>
+                        <td><?= $value['nama_rak'] ?></td>
+                        <td>
+                          <a href=""><button  class="btn btn-success" ><i class="fa fa-edit"></i>Edit</button></a>
+                          <a href=""><button  class="btn btn-danger" onclick="return confirm('Yakin untuk Menghapus Data?')"  ><i class="fa fa-trust"></i>Hapus</button></a>
+                        </td>
+                      </tr>
+                      <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -50,45 +67,45 @@
         <div class="modal-body">
           <div class="col-md-12">
             <div class="box-body">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="exampleInputEmail1">Buku Id</label>
                     <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
-                </div>
+                </div> -->
                  <div class="form-group">
                     <label for="exampleInputEmail1">Isbn</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="isbn" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Judul</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Pengarang</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="nama_pengarang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pengarang" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tahun</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="date" name="tahun" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tahun" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Halaman</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="halaman" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Halaman" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Penerbit</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="penerbit" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Penerbit" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Bahasa</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="bahasa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bahasa" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Kategori</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kategori" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Rak</label>
-                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>
+                    <input type="text" name="rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rak" required>
                 </div>
 
             </div>
