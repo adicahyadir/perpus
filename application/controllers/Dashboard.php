@@ -12,12 +12,16 @@ class Dashboard extends CI_Controller {
 	// 	$this->load->view('v_dashboard',$isi);
 	// }
 
-    public function __construct()
-    { 
-        parent::__construct();
-        //load model admin
-        $this->load->model('m_admin');
-    }
+  
+       
+	public function __construct()
+	{
+		parent::__construct();
+		//load library form validasi
+		$this->load->library('form_validation');
+		//load model admin
+		$this->load->model('m_admin');
+	}
 
 	public function index()
 	{

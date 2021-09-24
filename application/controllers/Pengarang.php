@@ -7,20 +7,29 @@ class Pengarang extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_pengarang');
+		//load library form validasi
+		$this->load->library('form_validation');
+		//load model admin
+		$this->load->model('m_admin');
 	}
 	public function index()
 	{
-		$isi['content'] = 'master/pengarang/v_pengarang';
-		$isi['title']   = 'Pengarang';
-		$isi['data'] = $this->db->get('pengarang')->result();
-		$this->load->view('v_dashboard', $isi);
+
+		if($this->m_admin->logged_id())
+		{
+			$isi['content'] = 'master/pengarang/v_pengarang';
+			$isi['title']   = 'Pengarang';
+			$isi['data'] = $this->db->get('pengarang')->result();
+			$this->load->view('v_dashboard', $isi);
+
+		}else{
+
+			//jika session belum terdaftar, maka redirect ke halaman login
+			redirect("login");
+
+		}
 	}
-	// public function tambah_pengarang()
-	// {
-	//     $isi['content'] = 'master/pengarang/form_pengarang';
-	// 	$isi['judul']   = 'Form tambah Pengarang';
-	// 	$this->load->view('v_dashbord', $isi);
-	// }
+
 	public function simpan()
 	{
 		$data['nama_pengarang'] = $this->input->post('nama_pengarang');

@@ -7,20 +7,30 @@ class Penerbit extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_penerbit');
+		//load library form validasi
+		$this->load->library('form_validation');
+		//load model admin
+		$this->load->model('m_admin');
 	}
+	
 	public function index()
 	{
-		$isi['content'] = 'master/penerbit/v_penerbit';
-		$isi['title']   = 'Penerbit';
-		$isi['data'] = $this->db->get('penerbit')->result();
-		$this->load->view('v_dashboard', $isi);
+	
+		if($this->m_admin->logged_id())
+		{
+			$isi['content'] = 'master/penerbit/v_penerbit';
+			$isi['title']   = 'Penerbit';
+			$isi['data'] = $this->db->get('penerbit')->result();
+			$this->load->view('v_dashboard', $isi);
+
+		}else{
+
+			//jika session belum terdaftar, maka redirect ke halaman login
+			redirect("login");
+
+		}
 	}
-	// public function tambah_penerbit()
-	// {
-	//     $isi['content'] = 'master/penerbit/form_penerbit';
-	// 	$isi['judul']   = 'Form tambah Penerbit';
-	// 	$this->load->view('v_dashbord', $isi);
-	// }
+	
 	public function simpan()
 	{
 		$data['nama_penerbit'] = $this->input->post('nama_penerbit');

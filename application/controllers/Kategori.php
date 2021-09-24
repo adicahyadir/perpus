@@ -7,13 +7,27 @@ class Kategori extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_kategori');
+		//load library form validasi
+		$this->load->library('form_validation');
+		//load model admin
+		$this->load->model('m_admin');
 	}
 	public function index()
 	{
-		$isi['content'] = 'master/kategori/v_kategori';
-		$isi['title']   = 'Kategori';
-		$isi['data'] = $this->db->get('kategori')->result();
-		$this->load->view('v_dashboard', $isi);
+		
+		if($this->m_admin->logged_id())
+		{
+			$isi['content'] = 'master/kategori/v_kategori';
+			$isi['title']   = 'Kategori';
+			$isi['data'] = $this->db->get('kategori')->result();
+			$this->load->view('v_dashboard', $isi);
+
+		}else{
+
+			//jika session belum terdaftar, maka redirect ke halaman login
+			redirect("login");
+
+		}
 	}
 	
 	public function simpan()

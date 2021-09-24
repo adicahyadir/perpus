@@ -7,14 +7,28 @@ class Rak extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_rak');
+		//load library form validasi
+		$this->load->library('form_validation');
+		//load model admin
+		$this->load->model('m_admin');
 	}
 
 	public function index()
 	{
-		$isi['content'] = 'master/rak/v_rak';
-		$isi['title']   = 'Rak Buku';
-		$isi['data'] = $this->db->get('rak')->result();
-		$this->load->view('v_dashboard', $isi);
+		
+		if($this->m_admin->logged_id())
+		{
+			$isi['content'] = 'master/rak/v_rak';
+			$isi['title']   = 'Rak Buku';
+			$isi['data'] = $this->db->get('rak')->result();
+			$this->load->view('v_dashboard', $isi);		
+
+		}else{
+
+			//jika session belum terdaftar, maka redirect ke halaman login
+			redirect("login");
+
+		}
 	}
 	
 	public function simpan()
