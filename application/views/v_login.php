@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
 
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Halaman Login</title>
+    <title>Log in</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?=base_url('assets/vendor/fontawesome-free/css/all.min.css');?>" rel="stylesheet" type="text/css">
@@ -42,33 +42,29 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">App Perpustakaan</h1>
-                                    </div>
-                                    <!--  <?= $this->session->flashdata('info');?> -->
-                                    <form action="<?= base_url()?>login/proses_login" method="post">
+                                    </div> 
+                                    <?= $this->session->flashdata('message');?>
+                                    <form action="<?= base_url()?>login" method="post">
                                         <div class="input-group mb-3">
-                                          <input type="username" name="username" class="form-control" placeholder="Username" required>
+                                          <input type="username" name="username" id="username" class="form-control" placeholder="Username" required>
                                           <div class="input-group-append">
                                             <div class="input-group-text">
                                               <span class="fas fa-envelope"></span>
                                             </div>
                                           </div>
                                         </div>
+                                        
                                         <div class="input-group mb-3">
-                                          <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                                           <div class="input-group-append">
                                             <div class="input-group-text">
                                               <span class="fas fa-lock"></span>
                                             </div>
                                           </div>
                                         </div>
+                                       
                                         <div class="row">
                                           <div class="col-8">
-                                            <div class="icheck-primary">
-                                              <input type="checkbox" id="remember">
-                                              <label for="remember">
-                                                Remember Me
-                                              </label>
-                                            </div>
                                           </div>
                                           <!-- /.col -->
                                           <br>
@@ -113,6 +109,7 @@
                                   <!--   <div class="text-center">
                                         <a class="small" href="register.html">Register Akun</a>
                                     </div> -->
+
                                     <br><br><br><br>
                                     <div class="container my-auto">
                                         <div class="copyright text-center my-auto">

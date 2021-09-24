@@ -3,7 +3,7 @@
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Kategori</h1>
     <p class="mb-4">Kategori buku</p>
-
+ 
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>

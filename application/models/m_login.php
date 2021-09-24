@@ -2,6 +2,11 @@
 
 class M_login extends CI_Model{
 
+	// function cek_login($login,$where)
+	// {		
+	// 	return $this->db->get_where($login,$where);
+	// }
+
 	public function proses_login($user,$pass)
 	{
 		$password = md5($pass);
@@ -22,6 +27,7 @@ class M_login extends CI_Model{
 			redirect('dashboard');
 		}else{
 			$this->session->set_flashdata('info', '<div class="alert alert-danger" role="alert">login gagal, silahkan periksa username dan password !</div>');
+			$this->session->sess_destroy();
 			redirect('login');
 		}
 	}

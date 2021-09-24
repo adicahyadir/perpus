@@ -15,12 +15,7 @@ class Kategori extends CI_Controller {
 		$isi['data'] = $this->db->get('kategori')->result();
 		$this->load->view('v_dashboard', $isi);
 	}
-	public function tambah_ktg()
-	{
-	    $isi['content'] = 'master/kategori/form_kategori';
-		$isi['judul']   = 'Form tambah Kategori';
-		$this->load->view('v_dashbord', $isi);
-	}
+	
 	public function simpan()
 	{
 		$data['nama_kategori'] = $this->input->post('nama_kategori');
@@ -31,7 +26,7 @@ class Kategori extends CI_Controller {
 			redirect('kategori');
 		}
 	
-	}
+	} 
 	public function update()
 	{
 		$id_kategori = $this->input->post('id_kategori');

@@ -66,7 +66,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nis </label>
-                    <input type="text" name="nis" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nis " required>
+                    <input type="number" name="nis" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nis " required>
                 </div>
                  <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">No Hp</label>
-                    <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No Hp" required>
+                    <input type="number" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No Hp" required>
                 </div>
 
             </div>
