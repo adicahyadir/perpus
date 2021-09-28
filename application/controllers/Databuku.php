@@ -10,7 +10,7 @@ class Databuku extends CI_Controller
 		$this->load->library('form_validation');
 		//load model admin
 		$this->load->model('m_admin');
-		$this->load->model('m_databuku', 'book');
+		$this->load->model('m_databuku');
 	}
 
 	public function index()
@@ -19,7 +19,7 @@ class Databuku extends CI_Controller
 		{
 			$isi['title'] = 'Data Buku';
 			$isi['content'] = 'master/v_databuku';
-			$isi['data'] = $this->book->getAllBuku();
+			$isi['data'] = $this->m_databuku->getAllBuku();
 			$this->load->view('v_dashboard', $isi);
 
 		}else{
@@ -29,10 +29,79 @@ class Databuku extends CI_Controller
 
 		}
 	}
-	public function delete($id_buku)
+	public function tambah_buku()
 	{
-		$this->book->delete($id_buku);
-		redirect ('databuku');
+		$isi['title'] = 'Data Buku';
+		$isi['content'] = 'master/v_databuku';
+		$isi['data'] = $this->db->get('databuku')->result();
+		$this->load->view('v_databuku', $isi);
+	}
+
+	public function simpan()
+	{
+		$data = array(
+			'id_buku' 		=> $this->input->post('id_buku'),
+			'buku_id' 		=> $this->input->post('buku_id'),
+			'isbn'			=> $this->input->post('isbn'),
+			'judul' 		=> $this->input->post('judul'),
+			'tahun' 		=> $this->input->post('tahun'),
+			'halaman'		=> $this->input->post('halaman'),
+			'jumlah'		=> $this->input->post('jumlah'),
+			'id_pengarang'	=> $this->input->post('id_pengarang'),
+			'id_penerbit'	=> $this->input->post('id_penerbit'),
+			'id_kategori'   => $this->input->post('id_kategori'),
+			'id_rak' 	    => $this->input->post('id_rak'),
+			'id_bahasa'		=> $this->input->post('id_bahasa')
+
+		);
+		$query = $this->db->insert('databuku', $data);
+		if ($query = true){
+			$this->session->set_flashdata('info','Data Berhasil di Simpan');
+			redirect('databuku');
+		}
+	}
+
+	public function edit($id)
+	{
+		$isi['title'] 		= 'Edit Data Buku';
+		$isi['content'] 	= 'master/edit_buku';
+		$isi['data']		= $this->m_databuku->edit($id) ;
+		$this->load->view('v_databuku', $isi);
+	}
+
+	public function update()
+	{
+		$buku_id = $this->input->post('buku_id');
+		$data = array(
+			'id_buku' 		=> $this->input->post('id_buku'),
+			'buku_id' 		=> $this->input->post('buku_id'),
+			'isbn'			=> $this->input->post('isbn'),
+			'judul' 		=> $this->input->post('judul'),
+			'tahun' 		=> $this->input->post('tahun'),
+			'halaman'		=> $this->input->post('halaman'),
+			'jumlah'		=> $this->input->post('jumlah'),
+			'id_pengarang'	=> $this->input->post('id_pengarang'),
+			'id_penerbit'	=> $this->input->post('id_penerbit'),
+			'id_kategori'   => $this->input->post('id_kategori'),
+			'id_rak' 	    => $this->input->post('id_rak'),
+			'id_bahasa'		=> $this->input->post('id_bahasa')
+		);
+
+		$query = $this->m_databuku->update($buku_id, $data);
+		if ($query = true){
+			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			redirect('databuku');
+		}
+	}
+
+	public function hapus($id)
+	{
+		
+		$query = $this->m_databuku->hapus($id);
+		if ($query = true){
+			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			redirect('databuku');
+		}
 	}
 	
 }

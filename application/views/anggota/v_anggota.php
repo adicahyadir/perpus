@@ -36,7 +36,7 @@
                             <td><?= $row->nis;?></td>
                             <td><?= $row->nama_anggota;?></td>
                             <td><?= $row->jenkel;?></td>
-                            <td><?= $row->kelas;?></td>
+                            <td>Kelas <?= $row->kelas;?></td>
                             <td><?= $row->alamat;?></td>
                             <td><?= $row->no_hp;?></td>
                             <td>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Kelas</label>
-                    <input type="text" name="kelas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas" required>
+                    <input type="number" name="kelas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kelas 7" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Alamat</label>
