@@ -25,6 +25,7 @@ class Databuku extends CI_Controller
 			$isi['pengarang'] = $this->db->get('pengarang')->result();
 			$isi['katagori'] = $this->db->get('kategori')->result();
 			$isi['rak'] = $this->db->get('rak')->result();
+			$isi['kode'] = $this->m_databuku->buku_id();
 			$this->load->view('v_dashboard', $isi);
 
 		}else{
@@ -62,7 +63,7 @@ class Databuku extends CI_Controller
 			'id_rak' 	    => $this->input->post('id_rak'),
 			'id_bahasa'		=> $this->input->post('id_bahasa')
 
-		);
+		); 
 		$query = $this->db->insert('databuku', $data);
 		if ($query = true){
 			$this->session->set_flashdata('info','Data Berhasil di Simpan');
@@ -73,15 +74,16 @@ class Databuku extends CI_Controller
 
 	public function edit($id)
 	{
+		$isi['bahasa'] 		= $this->db->get('bahasa')->result();
+		$isi['penerbit'] 	= $this->db->get('penerbit')->result();
+		$isi['pengarang'] 	= $this->db->get('pengarang')->result();
+		$isi['katagori'] 	= $this->db->get('kategori')->result();
+		$isi['rak'] 		= $this->db->get('rak')->result();
 		$isi['title'] 		= 'Edit Data Buku';
 		$isi['content'] 	= 'master/edit_buku';
-		$isi['data']		= $this->m_databuku->edit($id);
-		$isi['bahasa'] = $this->db->get('bahasa')->result();
-		$isi['penerbit'] = $this->db->get('penerbit')->result();
-		$isi['pengarang'] = $this->db->get('pengarang')->result();
-		$isi['katagori'] = $this->db->get('kategori')->result();
-		$isi['rak'] = $this->db->get('rak')->result();
-		$this->load->view('v_dashbord', $isi);
+		$isi['judul'] 		= 'Form Edit Buku' ;
+		$isi['data'] 		= $this->m_databuku->edit($id);
+		$this->load->view('v_dashboard', $isi);
 	}
 
 	public function update()

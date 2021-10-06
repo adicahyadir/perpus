@@ -2,10 +2,6 @@
 
 class M_databuku Extends CI_Model
 {
-    // public function __construct()
-    // {
-    //     $this->table = "databuku";
-    // } 
 
     public function buku_id()
     {
@@ -39,10 +35,10 @@ class M_databuku Extends CI_Model
     }
    
     public function edit($id)
-	{
-		$this->db->where('buku_id', $id);
-		return $this->db->get('databuku')->row_array();
-	}
+    {
+        $this->db->where('buku_id', $id);
+        return $this->db->get('databuku')->row_array();
+    }
 
 	public function update($buku_id, $data)
 	{

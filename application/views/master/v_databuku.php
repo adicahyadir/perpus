@@ -17,13 +17,13 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="">
                     <thead class="table-primary"> 
                         <tr>
-                            <th>No Buku</th>
+                            <th>No</th>
                             <th>Isbn</th>
                             <th>Judul</th>
                             <th>Pengarang</th>
                             <th>Tahun Masuk</th>
                             <th>Halaman Buku</th>
-                            <th>Jumlah Buku</th>
+                            <th>Jumlah</th>
                             <th>Penerbit</th>
                             <th>Bahasa</th>
                             <th>Kategori</th>
@@ -40,15 +40,15 @@
                         <td><?= $row['judul'] ?></td>
                         <td><?= $row['nama_pengarang'] ?></td>
                         <td><?= $row['tahun'] ?></td>
-                        <td><?= $row['halaman'] ?> - Halaman</td>
-                        <td><?= $row['jumlah']?> - Buku</td>
+                        <td><?= $row['halaman'] ?> Halaman</td>
+                        <td><?= $row['jumlah']?> Buku</td>
                         <td><?= $row['nama_penerbit'] ?></td>
                         <td><?= $row['nama_bahasa'] ?></td>
                         <td><?= $row['nama_kategori'] ?></td>
                         <td><?= $row['nama_rak'] ?></td>
                         <td>
-                          <a href="<?= base_url()?>databuku/edit/<?= $row->buku_id;?>"><button  class="btn btn-success btn-sm px-3" ><i class="fa fa-edit"></i>Edit</button></a>
-                          <a href="<?= base_url()?>databuku/hapus/<?= $row->buku_id;?>"><button  class="btn btn-danger btn-sm px-3" onclick="return confirm('Yakin untuk Menghapus Data?')"  ><i class="fa fa-trust"></i>Hapus</button></a>
+                          <a href="<?= base_url()?>databuku/edit/<?= $row['buku_id'];?>"><button  class="btn btn-success btn-sm px-3" ><i class="fa fa-edit"></i>Edit</button></a>
+                          <a href="<?= base_url()?>databuku/hapus/<?= $row['buku_id'];?>"><button  class="btn btn-danger btn-sm px-3" onclick="return confirm('Yakin untuk Menghapus Data?')"  ><i class="fa fa-trust"></i>Hapus</button></a>
                         </td>
                       </tr>
                       <?php } ?>
@@ -92,15 +92,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Tahun</label>
+                    <label for="exampleInputEmail1">Tahun Masuk</label>
                     <input type="date" name="tahun" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tahun" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1"> Halaman</label>
+                    <label for="exampleInputEmail1">Halaman Buku</label>
                     <input type="number" name="Halaman" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Halaman" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Jumlah Halaman</label>
+                    <label for="exampleInputEmail1">Jumlah Buku</label>
                     <input type="number" name="jumlah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="jumlah" required>
                 </div>
                 <div class="form-group">
