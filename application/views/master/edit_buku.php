@@ -10,10 +10,10 @@
         <div class="modal-body">
           <div class="col-md-12">
             <div class="box-body">
-                <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">Buku Id</label>
-                    <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
-                </div> -->
+                <div class="col-md-12"> 
+                    <label for="exampleInputEmail1">Buku ID</label>
+                    <input type="text" name="buku_id" value="<?= $data['buku_id'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+                </div>
                  <div class="form-group">
                     <label for="exampleInputEmail1">Isbn</label>
                     <input type="text" name="isbn" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isbn 0x" required>

@@ -1,4 +1,4 @@
-<?php
+ <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Databuku extends CI_Controller
@@ -20,6 +20,11 @@ class Databuku extends CI_Controller
 			$isi['title'] = 'Data Buku';
 			$isi['content'] = 'master/v_databuku';
 			$isi['data'] = $this->m_databuku->getAllBuku();
+			$isi['bahasa'] = $this->db->get('bahasa')->result();
+			$isi['penerbit'] = $this->db->get('penerbit')->result();
+			$isi['pengarang'] = $this->db->get('pengarang')->result();
+			$isi['katagori'] = $this->db->get('kategori')->result();
+			$isi['rak'] = $this->db->get('rak')->result();
 			$this->load->view('v_dashboard', $isi);
 
 		}else{
@@ -28,24 +33,28 @@ class Databuku extends CI_Controller
 			redirect("login");
 
 		}
+
+
 	}
+
 	public function tambah_buku()
 	{
-		$isi['title'] = 'Data Buku';
 		$isi['content'] = 'master/v_databuku';
-		$isi['data'] = $this->db->get('databuku')->result();
+		$isi['buku_id']	= $this->db->get('databuku')->result();
 		$this->load->view('v_databuku', $isi);
 	}
 
+
 	public function simpan()
 	{
+
 		$data = array(
 			'id_buku' 		=> $this->input->post('id_buku'),
 			'buku_id' 		=> $this->input->post('buku_id'),
 			'isbn'			=> $this->input->post('isbn'),
 			'judul' 		=> $this->input->post('judul'),
 			'tahun' 		=> $this->input->post('tahun'),
-			'halaman'		=> $this->input->post('halaman'),
+			'halaman'		=> $this->input->post('Halaman'),
 			'jumlah'		=> $this->input->post('jumlah'),
 			'id_pengarang'	=> $this->input->post('id_pengarang'),
 			'id_penerbit'	=> $this->input->post('id_penerbit'),
@@ -61,12 +70,18 @@ class Databuku extends CI_Controller
 		}
 	}
 
+
 	public function edit($id)
 	{
 		$isi['title'] 		= 'Edit Data Buku';
 		$isi['content'] 	= 'master/edit_buku';
-		$isi['data']		= $this->m_databuku->edit($id) ;
-		$this->load->view('v_databuku', $isi);
+		$isi['data']		= $this->m_databuku->edit($id);
+		$isi['bahasa'] = $this->db->get('bahasa')->result();
+		$isi['penerbit'] = $this->db->get('penerbit')->result();
+		$isi['pengarang'] = $this->db->get('pengarang')->result();
+		$isi['katagori'] = $this->db->get('kategori')->result();
+		$isi['rak'] = $this->db->get('rak')->result();
+		$this->load->view('v_dashbord', $isi);
 	}
 
 	public function update()
@@ -78,7 +93,7 @@ class Databuku extends CI_Controller
 			'isbn'			=> $this->input->post('isbn'),
 			'judul' 		=> $this->input->post('judul'),
 			'tahun' 		=> $this->input->post('tahun'),
-			'halaman'		=> $this->input->post('halaman'),
+			'halaman'		=> $this->input->post('Halaman'),
 			'jumlah'		=> $this->input->post('jumlah'),
 			'id_pengarang'	=> $this->input->post('id_pengarang'),
 			'id_penerbit'	=> $this->input->post('id_penerbit'),
@@ -96,12 +111,11 @@ class Databuku extends CI_Controller
 
 	public function hapus($id)
 	{
-		
 		$query = $this->m_databuku->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			$this->session->set_flashdata('info','Data Berhasil di Hapus');
 			redirect('databuku');
-		}
+		}		
 	}
 	
 }
