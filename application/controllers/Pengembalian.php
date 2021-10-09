@@ -9,6 +9,8 @@ class Pengembalian extends CI_Controller {
 		$this->load->library('form_validation');
 		//load model admin
 		$this->load->model('m_admin');
+		$this->load->model('m_peminjaman');
+			
 	}
 
 	public function index()
@@ -17,6 +19,7 @@ class Pengembalian extends CI_Controller {
 		{
             $isi['content'] = 'transaksi/v_pengembalian';
             $isi['title'] = 'Pengembalian Buku';
+            $isi['peminjaman']= $this->m_peminjaman->peminjaman();
             $this->load->view('v_dashboard', $isi);
 
 		}else{
@@ -26,5 +29,6 @@ class Pengembalian extends CI_Controller {
 
 		}
 	}
+
 
 }

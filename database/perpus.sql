@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2021 at 02:08 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Oct 09, 2021 at 06:06 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,7 +66,9 @@ CREATE TABLE `bahasa` (
 
 INSERT INTO `bahasa` (`id_bahasa`, `nama_bahasa`) VALUES
 (12, 'Arabic'),
-(15, 'Indonesia');
+(15, 'Indonesia'),
+(19, 'English'),
+(20, 'Sunda');
 
 -- --------------------------------------------------------
 
@@ -89,6 +91,33 @@ CREATE TABLE `databuku` (
   `id_bahasa` int(11) NOT NULL,
   `gambar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `databuku`
+--
+
+INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`, `gambar`) VALUES
+(18, 'BK001', '1', 'ini judul ngentot', '2021-10-15', '1', 2, 3, 4, 6, 17, 19, ''),
+(19, 'BK002', '12', 'dadang boga bot shoppe ', '2021-10-23', '12', 42, 1, 2, 3, 18, 15, ''),
+(20, 'BK003', '44', 'kontol', '2021-10-21', '12', 24, 3, 4, 1, 17, 15, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `denda`
+--
+
+CREATE TABLE `denda` (
+  `id_denda` int(11) NOT NULL,
+  `harga_denda` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `denda`
+--
+
+INSERT INTO `denda` (`id_denda`, `harga_denda`) VALUES
+(1, '600');
 
 -- --------------------------------------------------------
 
@@ -137,6 +166,33 @@ INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `peminjaman`
+--
+
+CREATE TABLE `peminjaman` (
+  `id_pinjam` int(11) NOT NULL,
+  `pinjam_id` varchar(225) NOT NULL,
+  `id_anggota` int(11) NOT NULL,
+  `buku_id` varchar(225) NOT NULL,
+  `tgl_pinjam` int(11) NOT NULL,
+  `tgl_balik` int(11) NOT NULL,
+  `denda` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id_pinjam`, `pinjam_id`, `id_anggota`, `buku_id`, `tgl_pinjam`, `tgl_balik`, `denda`, `status`) VALUES
+(29, '11', 11, '1', 1, 1, 1, 0),
+(30, 'PJ012', 23, 'BK002', 1633794085, 0, 0, 0),
+(31, 'PJ013', 23, 'BK001', 1633794674, 1633794745, 0, 0),
+(32, 'PJ014', 23, 'BK001', 1633794758, 1633795025, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `penerbit`
 --
 
@@ -152,7 +208,8 @@ CREATE TABLE `penerbit` (
 
 INSERT INTO `penerbit` (`id_penerbit`, `nama_penerbit`, `alamat`) VALUES
 (1, 'adi', 'Surabaya'),
-(2, 'rico', 'jakarta');
+(2, 'rico', 'jakarta'),
+(4, 'Cv Buku Pedia', 'Bandung');
 
 -- --------------------------------------------------------
 
@@ -171,7 +228,6 @@ CREATE TABLE `pengarang` (
 
 INSERT INTO `pengarang` (`id_pengarang`, `nama_pengarang`) VALUES
 (1, 'aditya'),
-(2, 'rahman'),
 (3, 'Adriel');
 
 -- --------------------------------------------------------
@@ -191,9 +247,8 @@ CREATE TABLE `rak` (
 --
 
 INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
-(9, 'Rak 1', 'Baris 1'),
-(10, 'Rak 2', 'Baris 2'),
-(11, 'Rak 5', 'Baris 9');
+(17, '2', '2'),
+(18, '3', '3');
 
 -- --------------------------------------------------------
 
@@ -424,6 +479,12 @@ ALTER TABLE `databuku`
   ADD KEY `id_bahasa` (`id_bahasa`);
 
 --
+-- Indexes for table `denda`
+--
+ALTER TABLE `denda`
+  ADD PRIMARY KEY (`id_denda`);
+
+--
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
@@ -434,6 +495,13 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD PRIMARY KEY (`id_pinjam`),
+  ADD KEY `id_anggota` (`id_anggota`,`buku_id`);
 
 --
 -- Indexes for table `penerbit`
@@ -473,7 +541,19 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `bahasa`
 --
 ALTER TABLE `bahasa`
-  MODIFY `id_bahasa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_bahasa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `databuku`
+--
+ALTER TABLE `databuku`
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `denda`
+--
+ALTER TABLE `denda`
+  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -488,10 +568,16 @@ ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT for table `penerbit`
 --
 ALTER TABLE `penerbit`
-  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pengarang`
@@ -503,7 +589,7 @@ ALTER TABLE `pengarang`
 -- AUTO_INCREMENT for table `rak`
 --
 ALTER TABLE `rak`
-  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
