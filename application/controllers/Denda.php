@@ -70,12 +70,12 @@ class Denda extends CI_Controller {
 		$this->load->view('v_dashboard', $isi);
 	}
 
-	public function hapus($id)
-	{
-		$query = $this->m_denda->hapus($id);
-		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Hapus');
-			redirect('denda');
-		}
-	}	
+	// public function hapus($id)
+	// {
+	// 	$query = $this->m_denda->hapus($id);
+	// 	if ($query = true){
+	// 		$this->session->set_flashdata('info','Data Berhasil di Hapus');
+	// 		redirect('denda');
+	// 	}
+	// }	
 }

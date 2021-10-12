@@ -21,7 +21,7 @@
                             <th>Isbn</th>
                             <th>Judul</th>
                             <th>Pengarang</th>
-                            <th>Tahun Masuk</th>
+                            <th>Tahun Terbit</th>
                             <th>Halaman Buku</th>
                             <th>Jumlah</th>
                             <th>Penerbit</th>

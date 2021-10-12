@@ -5,9 +5,9 @@
     <p class="mb-4">Harga Denda</p>
 
     <!-- DataTales Example -->
-    <div class="mb-4" style="position: float-right">
+  <!--   <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
-    </div>
+    </div> -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Denda</h6>
@@ -31,7 +31,7 @@
                             <td>Rp . <?= $row->harga_denda;?> -,</td>
                         <td>
                                 <a href="<?= base_url()?>denda/edit/<?= $row->id_denda;?>"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
-                                <a href="<?= base_url()?>denda/hapus/<?= $row->id_denda;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
+                                <!-- <a href="<?= base_url()?>denda/hapus/<?= $row->id_denda;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a> -->
                             </td>
                         </tr>
                     <?php } ?>

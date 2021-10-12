@@ -18,6 +18,7 @@ class Laporan extends CI_Controller {
 		if($this->m_admin->logged_id())
 		{
 			$isi['content'] = 'laporan/v_laporan';
+			$isi['title']   = 'Laporan';
 			$this->load->view('v_dashboard', $isi);
 
 		}else{

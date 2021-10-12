@@ -2,7 +2,7 @@
  <!-- Page Heading -->
  <div class="container-fluid">
  	<!-- DataTales Example -->
-     <h1 class="h3 mb-2 text-gray-800">Daftar Pengembalian</h1>
+     <h1 class="h3 mb-2 text-gray-800">Data Pengembalian Buku</h1>
      <div class=" mb-4" style="position: float-right">
            <!--  <a href="#" class="btn btn-success ">Tambah</a> -->
     </div>

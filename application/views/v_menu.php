@@ -4,20 +4,19 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url()?>dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Halaman Utama</span></a>
     </li>
-
     
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengguna"
             aria-expanded="true" aria-controls="pengguna">
             <i class="fas fa-user-plus"></i>
-            <span>Data Pengguna</span>
+            <span>Data Keanggotaan</span>
         </a>
         <div id="pengguna" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Pengguna</h6>
-                <a class="collapse-item" href="#">Petugas</a>
+                <h6 class="collapse-header">Keanggotaan</h6>
+                <!-- <a class="collapse-item" href="#">Petugas</a> -->
                 <a class="collapse-item" href="<?= base_url()?>anggota">Anggota</a>
             </div>
         </div>

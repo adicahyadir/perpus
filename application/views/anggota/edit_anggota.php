@@ -21,7 +21,7 @@
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Nis</label>
           <div class="col-sm-10">
-            <input type="text" name="nis" class="form-control" value="<?= $data['nis'] ?>" required>
+            <input type="number" name="nis" class="form-control" value="<?= $data['nis'] ?>" required>
           </div>
         </div>
 
@@ -40,7 +40,7 @@
          <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Kelas</label>
           <div class="col-sm-10">
-            <input type="text" name="kelas" class="form-control" value="<?= $data['kelas'] ?>" required>
+            <input type="number" name="kelas" class="form-control" value="<?= $data['kelas'] ?>" required>
           </div>
         </div>
          <div class="form-group">
@@ -52,7 +52,7 @@
          <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">No Hp</label>
           <div class="col-sm-10">
-            <input type="text" name="no_hp" class="form-control" value="<?= $data['no_hp'] ?>" required>
+            <input type="number" name="no_hp" class="form-control" value="<?= $data['no_hp'] ?>" required>
           </div>
         </div>
 

@@ -1,3 +1,4 @@
+
 <section class="content">
  <!-- Page Heading -->
  <div class="container-fluid">
@@ -8,10 +9,16 @@
     <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
     </div>
+    <!-- <?php
+      if (!empty($this->session->flashdata('info'))) {?>
+          <div class="alert alert-success" role="alert"><?= $this->session->flashdata('info');?></div>   
+        <?php }
+      ?> -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Anggota</h6>
         </div>
+        
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

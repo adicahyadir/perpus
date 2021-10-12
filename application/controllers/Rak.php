@@ -42,7 +42,7 @@ class Rak extends CI_Controller {
 			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
 			redirect('rak');
 		}
-	
+
 	}
 	public function update()
 	{

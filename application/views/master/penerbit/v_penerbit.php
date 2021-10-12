@@ -19,7 +19,7 @@
                         <tr>
                             <th>No</th>
                             <th>Penerbit</th>
-                            <th>alamat</th>
+                            <th>Alamat</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>

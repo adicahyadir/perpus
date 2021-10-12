@@ -63,10 +63,9 @@ class Peminjaman extends CI_Controller {
 		);
 		$query = $this->m_peminjaman->update($buku_id1, $data, 'buku_id', 'databuku');
 
-
 		$data = array(
 			'pinjam_id' 		=> $this->input->post('pinjam_id'),
-			'id_anggota'			=> $this->input->post('anggota'),
+			'id_anggota'		=> $this->input->post('anggota'),
 			'buku_id' 			=> $buku_id1,
 			'status' 			=> 1,
 			'tgl_pinjam'		=> $tanggal_pinjam,

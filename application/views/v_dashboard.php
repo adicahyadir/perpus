@@ -18,6 +18,8 @@
     <!-- Custom styles for this template-->
     <link href="<?=base_url('assets/css/sb-admin-2.min.css');?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/select2.min.css">
+
+    
 </head>
 
 <body id="page-top">
@@ -30,7 +32,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div class="sidebar-brand-text mx-3"><sup>App</sup>Perpustakaan</div>
+                <div class="sidebar-brand-text mx-3"><sup></sup>Perpustakaan</div>
             </a>
 
             <!-- Divider -->
@@ -189,6 +191,10 @@
     <script src="<?=base_url('assets/js/demo/datatables-demo.js');?>"></script>
     <!-- Javascrip -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="<?=base_url('assets/sweetalert2/sweetalert2.all.min.js');?>"></script>
+
+    
 </body>
 
 </html>

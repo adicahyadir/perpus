@@ -24,7 +24,7 @@
                           <th>ID Anggota</th>
                           <th>Nama</th>
                           <th>Tanggal Pinjam</th>
-                          <th>Tanggal Kembali</th>e
+                          <th>Tanggal Kembali</th>
                           <th>Denda</th>
                           <th>Aksi</th>
                         </tr>
@@ -81,7 +81,7 @@
         $denda -= 86400;
       } while ($denda > 86400);
     }
-   ?>
+   ?> 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal<?=$p['id_pinjam'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -89,11 +89,13 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Pengembalian</h5>
       </div>
+
       <form method="post" action="<?= base_url()?>peminjaman/update" class="form-horizontal" >
         <div class="modal-body">
           <div class="col-md-12">
             <div class="box-body">
-              <div class="form-group">
+            <div class="form-group">
+              <h6>Yakin untuk mengembalikan buku : <?=$p['buku_id'] ?></h6>
             <input type="hidden" name="id_pinjam" value="<?=$p['id_pinjam'] ?>" class="form-control">
             <input type="hidden" name="buku_id" value="<?=$p['buku_id'] ?>" class="form-control">
             <input type="hidden" name="denda" value="<?=$harga ?>" class="form-control">

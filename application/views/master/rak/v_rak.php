@@ -1,5 +1,5 @@
 <section class="content">
- <!-- Page Heading -->
+  <!-- Page Heading -->
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Rak Buku</h1>
     <p class="mb-4">Jumlah Rak Perpustakaan </p>
@@ -28,13 +28,13 @@
                     $no = 1;
                     foreach ($data as $row) {?>
                         <tr>
-                            <td><?= $no++;?></td>
-                            <td>Rak <?= $row->nama_rak;?></td>
-                            <td>Baris <?= $row->baris_rak;?></td>
-                            <td>
-                                <a href="<?= base_url()?>rak/edit/<?= $row->id_rak;?>"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
-                                <a href="<?= base_url()?>rak/hapus/<?= $row->id_rak;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
-                            </td>
+                          <td><?= $no++;?></td>
+                          <td>Rak <?= $row->nama_rak;?></td>
+                          <td>Baris <?= $row->baris_rak;?></td>
+                          <td>
+                              <a href="<?= base_url()?>rak/edit/<?= $row->id_rak;?>"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
+                              <a href="<?= base_url()?>rak/hapus/<?= $row->id_rak;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
+                          </td>
                         </tr>
                     <?php } ?>
                     
@@ -75,6 +75,4 @@
     </div>
   </div>
 </div>
-
-
 </section>
