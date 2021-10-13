@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2021 at 06:06 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.21
+-- Generation Time: Oct 13, 2021 at 05:51 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,12 +42,8 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
-(18, '5520118048', 'Adi Cahyadi', 'Laki-Laki', 'Kelas 7', 'Cimacan', '0899928922'),
-(19, '5520118046', 'Santi S', 'Perempuan', 'Kelas 9', 'Colibah', '08122356789'),
-(21, '5520118047', 'Cahyani', 'Perempuan', 'Kelas 7', 'Surabaya', '08898900123'),
-(22, '5520118040', 'Rully', 'Laki-Laki', 'Kelas 7', 'KP. PASIRHINGKIK', '081234567855'),
-(23, '5520118042', 'rahmen', 'Laki-Laki', 'Kelas 9', 'KP. NYALINDUNG', '08928268888'),
-(24, '5520118088', 'Adi Cahyadi', 'Perempuan', 'Kelas 8', 'ds sukanagalih', '089663915964');
+(25, '5520118040', 'Adi', 'Laki Laki', '7', 'Cipanas', '0812345678'),
+(26, '5520118041', 'Cahyadi', 'Laki Laki', '8', 'Hanjawar', '0823456789');
 
 -- --------------------------------------------------------
 
@@ -97,9 +93,8 @@ CREATE TABLE `databuku` (
 --
 
 INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`, `gambar`) VALUES
-(18, 'BK001', '1', 'ini judul ngentot', '2021-10-15', '1', 2, 3, 4, 6, 17, 19, ''),
-(19, 'BK002', '12', 'dadang boga bot shoppe ', '2021-10-23', '12', 42, 1, 2, 3, 18, 15, ''),
-(20, 'BK003', '44', 'kontol', '2021-10-21', '12', 24, 3, 4, 1, 17, 15, '');
+(21, 'BK001', '519.6.SUP.M.1', 'Mudah dan Cepat Membuat Program Skripsi dengan VB 2012', '2012-01-01', '60', 4, 8, 5, 7, 19, 15, ''),
+(22, 'BK002', '	519.8.pet.b.1', 'Basics of Reservoir Simulation with the Eclipse Reservoir Simulator', '2006-02-08', '35', 1, 9, 6, 8, 20, 19, '');
 
 -- --------------------------------------------------------
 
@@ -117,7 +112,7 @@ CREATE TABLE `denda` (
 --
 
 INSERT INTO `denda` (`id_denda`, `harga_denda`) VALUES
-(1, '600');
+(1, '1000');
 
 -- --------------------------------------------------------
 
@@ -135,11 +130,14 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'Matematika'),
-(2, 'Fiksi'),
-(3, 'Ips'),
-(4, 'Ipa'),
-(6, 'Dongeng');
+(7, 'Teknologi'),
+(8, 'Komputer'),
+(9, 'Filsafat dan Psikologi'),
+(10, 'Bahasa'),
+(11, 'Sains dan Matematika'),
+(12, 'Sejarah'),
+(13, 'Agama'),
+(14, 'Kesenian dan Rekreasi');
 
 -- --------------------------------------------------------
 
@@ -188,7 +186,11 @@ INSERT INTO `peminjaman` (`id_pinjam`, `pinjam_id`, `id_anggota`, `buku_id`, `tg
 (29, '11', 11, '1', 1, 1, 1, 0),
 (30, 'PJ012', 23, 'BK002', 1633794085, 0, 0, 0),
 (31, 'PJ013', 23, 'BK001', 1633794674, 1633794745, 0, 0),
-(32, 'PJ014', 23, 'BK001', 1633794758, 1633795025, 0, 0);
+(32, 'PJ014', 23, 'BK001', 1633794758, 1633795025, 0, 0),
+(33, 'PJ015', 25, 'BK001', 1634013930, 1634049741, 0, 0),
+(34, 'PJ016', 26, 'BK002', 1634014694, 1634014716, 0, 0),
+(35, 'PJ017', 26, 'BK001', 1634014756, 0, 0, 1),
+(36, 'PJ018', 25, 'BK002', 1634050640, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -207,9 +209,8 @@ CREATE TABLE `penerbit` (
 --
 
 INSERT INTO `penerbit` (`id_penerbit`, `nama_penerbit`, `alamat`) VALUES
-(1, 'adi', 'Surabaya'),
-(2, 'rico', 'jakarta'),
-(4, 'Cv Buku Pedia', 'Bandung');
+(5, 'Elex Media Komputindo', 'Jakarta'),
+(6, 'Department of Mathematics , Univ. of Bergen', 'Jawa barat');
 
 -- --------------------------------------------------------
 
@@ -227,8 +228,8 @@ CREATE TABLE `pengarang` (
 --
 
 INSERT INTO `pengarang` (`id_pengarang`, `nama_pengarang`) VALUES
-(1, 'aditya'),
-(3, 'Adriel');
+(8, 'Ir. Yuniar Supardi'),
+(9, 'Oystein Pettersen');
 
 -- --------------------------------------------------------
 
@@ -247,8 +248,11 @@ CREATE TABLE `rak` (
 --
 
 INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
-(17, '2', '2'),
-(18, '3', '3');
+(19, '1', '4'),
+(20, '2', '1'),
+(21, '3', '4'),
+(23, '4', '1'),
+(24, '6', '3');
 
 -- --------------------------------------------------------
 
@@ -535,7 +539,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `bahasa`
@@ -547,7 +551,7 @@ ALTER TABLE `bahasa`
 -- AUTO_INCREMENT for table `databuku`
 --
 ALTER TABLE `databuku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `denda`
@@ -559,7 +563,7 @@ ALTER TABLE `denda`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -571,25 +575,25 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `penerbit`
 --
 ALTER TABLE `penerbit`
-  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pengarang`
 --
 ALTER TABLE `pengarang`
-  MODIFY `id_pengarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pengarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rak`
 --
 ALTER TABLE `rak`
-  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
