@@ -43,7 +43,7 @@
                             <td><?= $row->nis;?></td>
                             <td><?= $row->nama_anggota;?></td>
                             <td><?= $row->jenkel;?></td>
-                            <td>Kelas <?= $row->kelas;?></td>
+                            <td><?= $row->kelas;?></td>
                             <td><?= $row->alamat;?></td>
                             <td><?= $row->no_hp;?></td>
                             <td>

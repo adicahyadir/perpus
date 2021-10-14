@@ -80,7 +80,6 @@
 						<th>PENERBIT</th>
 						<th>PENGARANG</th>
 						<th>KATEGORI</th>
-						<th>STATUS</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -95,8 +94,6 @@
                         <td><?= $row['nama_penerbit'] ?></td>
                         <td><?= $row['nama_pengarang'] ?></td>
                         <td><?= $row['nama_kategori'] ?> </td>
-                        <td>status naon</td>
-                       
                       </tr>
                       <?php } ?>
 				</tbody>

@@ -42,7 +42,7 @@ class Anggota extends CI_Controller {
 		);
 		$this->db->insert('anggota',$data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info','Data Berhasil di Tambahkan');
 			redirect('anggota');
 		}
 	}
