@@ -51,4 +51,11 @@ class M_databuku Extends CI_Model
         $this->db->where('buku_id', $id);
         $this->db->delete('databuku');
     }
+    public function get_bukuz_keyword($keyword){
+            $this->db->select('*');
+            $this->db->from('databuku');
+            $this->db->like('isbn',$keyword);
+            $this->db->or_like('judul',$keyword);
+            return $this->db->get()->result();
+        }
 }
