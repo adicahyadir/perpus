@@ -106,7 +106,7 @@ class Peminjaman extends CI_Controller {
 			$query = $this->db->insert('peminjaman', $data);
 		}
 		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Tambahkan');
+			$this->session->set_flashdata('info_p', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('peminjaman');
 		}
 	}
@@ -131,7 +131,7 @@ class Peminjaman extends CI_Controller {
 
 
 		if ($query = true){
-			$this->session->set_flashdata('info','Buku Berhasil Di Kembalikan');
+			$this->session->set_flashdata('info_p','<span class="alert alert-success">Buku berhasil di kembalikan</span>');
 			redirect('peminjaman');
 		}
 	}

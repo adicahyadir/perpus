@@ -38,7 +38,7 @@ class Kategori extends CI_Controller {
 		);
 		$this->db->insert('kategori', $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
+			$this->session->set_flashdata('info_k', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('kategori');
 		}
 	
@@ -51,7 +51,7 @@ class Kategori extends CI_Controller {
 		);
 		$query = $this->m_kategori->update($id_kategori, $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_k','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('kategori');
 		}
 	}
@@ -70,7 +70,7 @@ class Kategori extends CI_Controller {
 	{
 		$query = $this->m_kategori->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			$this->session->set_flashdata('info_k', '<span class="alert alert-danger">Data Berhasil DiHapus</span>');
 			redirect('kategori');
 		}
 	}

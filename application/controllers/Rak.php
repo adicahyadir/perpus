@@ -39,11 +39,13 @@ class Rak extends CI_Controller {
 		);
 		$this->db->insert('rak', $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
+			$this->session->set_flashdata('info_r', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('rak');
 		}
+	//
 
 	}
+
 	public function update()
 	{
 		$id_rak = $this->input->post('id_rak');
@@ -54,7 +56,7 @@ class Rak extends CI_Controller {
 		);
 		$query = $this->m_rak->update($id_rak, $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_r','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('rak');
 		}
 	}
@@ -73,7 +75,7 @@ class Rak extends CI_Controller {
 	{
 		$query = $this->m_rak->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			$this->session->set_flashdata('info_r', '<span class="alert alert-danger">Data Berhasil DiHapus</span>');
 			redirect('rak');
 		}
 	}

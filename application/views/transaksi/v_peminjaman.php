@@ -7,6 +7,7 @@
     
     <div class=" mb-4" style="position: float-right">
         <a href="<?= base_url()?>Peminjaman/tambah_peminjam" class="btn btn-success"></i>Tambah</a>
+        <?= $this->session->flashdata('info_p');?>
     </div>
         <!-- DataTales Example -->
     <div class="card shadow mb-4">

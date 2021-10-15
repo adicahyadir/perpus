@@ -42,7 +42,7 @@ class Anggota extends CI_Controller {
 		);
 		$this->db->insert('anggota',$data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Tambahkan');
+			$this->session->set_flashdata('info_a', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('anggota');
 		}
 	}
@@ -61,7 +61,7 @@ class Anggota extends CI_Controller {
 
 		$query = $this->m_anggota->update($id_anggota, $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_a','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('anggota');
 		}
 	}
@@ -78,7 +78,7 @@ class Anggota extends CI_Controller {
 	{
 		$query = $this->m_anggota->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			$this->session->set_flashdata('info_a', '<span class="alert alert-danger">Data Berhasil DiHapus</span>');
 			redirect('anggota');
 		}
 	}

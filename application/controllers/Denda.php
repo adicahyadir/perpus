@@ -38,15 +38,15 @@ class Denda extends CI_Controller {
 		$this->load->view('v_dashbord', $isi);	
 	}
 
-	public function simpan()
-	{
-		$data['harga_denda'] = $this->input->post('harga_denda');
-		$this->db->insert('denda', $data);
-		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Simpan');
-			redirect('denda');
-		}
-	}
+	// public function simpan()
+	// {
+	// 	$data['harga_denda'] = $this->input->post('harga_denda');
+	// 	$this->db->insert('denda', $data);
+	// 	if ($query = true) {
+	// 		$this->session->set_flashdata('info','Data Berhasil di Simpan');
+	// 		redirect('denda');
+	// 	}
+	// }
 
 	public function update()
 	{
@@ -56,7 +56,7 @@ class Denda extends CI_Controller {
 		);
 		$query = $this->m_denda->update($id_denda, $data);
 		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_dd','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('denda');
 		}
 	}

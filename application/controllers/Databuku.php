@@ -66,7 +66,7 @@ class Databuku extends CI_Controller
 		); 
 		$query = $this->db->insert('databuku', $data);
 		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Simpan');
+			$this->session->set_flashdata('info_d', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('databuku');
 		}
 	}
@@ -106,7 +106,7 @@ class Databuku extends CI_Controller
 
 		$query = $this->m_databuku->update($buku_id, $data);
 		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_d','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('databuku');
 		}
 	}
@@ -115,7 +115,7 @@ class Databuku extends CI_Controller
 	{
 		$query = $this->m_databuku->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info','Data Berhasil di Hapus');
+			$this->session->set_flashdata('info_d', '<span class="alert alert-danger">Data Berhasil DiHapus</span>');
 			redirect('databuku');
 		}		
 	}

@@ -40,7 +40,7 @@ class Penerbit extends CI_Controller {
 		);
 		$this->db->insert('penerbit', $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info', 'Data Berhasil di Simpan');
+			$this->session->set_flashdata('info_pp', '<span class="alert alert-success">Data Berhasil di Tambahkan</span>');
 			redirect('penerbit');
 		}
 	
@@ -55,7 +55,7 @@ class Penerbit extends CI_Controller {
 		);
 		$query = $this->m_penerbit->update($id_penerbit, $data);
 		if ($query = true) {
-			$this->session->set_flashdata('info','Data Berhasil di Ubah');
+			$this->session->set_flashdata('info_pp','<span class="alert alert-success">Data Berhasil di Ubah</span>');
 			redirect('penerbit');
 		}
 	}
@@ -73,7 +73,7 @@ class Penerbit extends CI_Controller {
 	{
 		$query = $this->m_penerbit->hapus($id);
 		if ($query = true){
-			$this->session->set_flashdata('info', 'Data Berhasil DiHapus');
+			$this->session->set_flashdata('info_pp', '<span class="alert alert-danger">Data Berhasil DiHapus</span>');
 			redirect('penerbit');
 		}
 	}
