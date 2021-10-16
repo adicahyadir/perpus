@@ -2,7 +2,8 @@
  <!-- Page Heading -->
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Data Buku</h1>
-    <p class="mb-4">Daftar Buku Perpustakaan</p>
+    <p class="mb-4">Daftar Buku Perpustakaan 
+        <button class="btn btn-outline-info fas fa-file-pdf" onclick="printDiv('printableArea')" aria-hidden="true"></button></p>
 
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">
@@ -13,7 +14,7 @@
         <div class="card-header py-2">
             <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
         </div>
-        <div class="card-body ">
+        <div class="card-body" id="print">
             <div class="table-responsive">
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="">
                     <thead class="table-primary"> 

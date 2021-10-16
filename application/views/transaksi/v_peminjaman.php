@@ -2,7 +2,7 @@
  <!-- Page Heading -->
  <div class="container-fluid">  
     <h1 class="h3 mb-2 text-gray-800">Peminjaman</h1>
-    <p class="mb-4">Daftar Peminjam buku</p>
+    <p class="mb-4">Daftar Peminjam buku <button class="btn btn-outline-info fas fa-file-pdf" aria-hidden="true"></button></p>
 
     
     <div class=" mb-4" style="position: float-right">

@@ -61,12 +61,12 @@
     </li>
     
     <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
+    <hr class="sidebar-divider">
 
-   <!--  <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="<?= base_url()?>laporan">
             <i class="far fa-file-alt"></i>
             <span>Laporan</span></a>
-    </li> -->
+    </li>
 </section>
 </aside>

@@ -1,105 +1,53 @@
 <section class="content">
  <!-- Page Heading -->
  <div class="container-fluid">
- 	<h1>Data Laporan </h1>
+ 	<h1>Laporan Transaksi</h1>
 
-	<div>
-		<div id="accordion">
-
-		  <div class="card">
-		    <div class="card-header" id="headingTwo">
-		      <h5 class="mb-0">
-		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwoo" aria-expanded="false" aria-controls="collapseTwoo">
-		         Laporan Data Peminjaman
-		        </button>
-		        <a href=""><button>Print</button></a>
-		      </h5>
-		    </div>
-		    <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-		      <div class="card-body">
-		        <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
-                    <thead class="table-primary">
-                        <tr> 
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Kelas</th>
-                            <th>Judul Buku</th>
-                            <th>Tanggal pinjam</th>
-                            <th>Tanggal Kembali</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                </table>
-            	</div>
-		      </div>
-		    </div>
-		  </div>
-
-		  <div class="card">
-		    <div class="card-header" id="headingThree">
-		      <h5 class="mb-0">
-		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		          Laporan Denda
-		        </button>
-		        <a href=""><button>Print</button></a>
-		      </h5>
-		    </div>
-		    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-		      <div class="card-body">
-		        <div class="table-responsive">
-                <table class="table table-bordered"  width="100%" cellspacing="0">
-                    <thead class="table-primary">
-                        <tr> 
-                            <th>No</th>
-                            <th>Pemasukan</th>
-                         </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                </table>
-            	</div>
-		      </div>
-		    </div>
-		  </div>
-
-		   <div class="card">
-		    <div class="card-header" id="headingThree">
-		      <h5 class="mb-0">
-		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-		          Laporan Data Anggota
-		        </button>
-		        <a href=""><button>Print</button></a>
-		      </h5>
-		    </div>
-		    <div id="collapsefour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-		      <div class="card-body">
-		        <div class="table-responsive">
-                <table class="table table-bordered"  width="100%" cellspacing="0">
-                    <thead class="table-primary">
-                        <tr> 
-							<th>Nis</th>
-							<th>Nama</th>
-							<th>Jenis Kelamin</th>
-							<th>Kelas</th>
-							<th>Alamat</th>
-							<th>No_hp</th>
-                         </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                </table>
-            	</div>
-		      </div>
-		    </div>
-		  </div>
-
-		</div>
 	</div>
+		<?php echo form_open('laporan/cetak') ?>
+  <div class="row px-3 py-3">
+          <div class="col-lg-3">
+              <div class="form-group">
+              <label for="label">Tanggal Awal</label>
+              <input type="date" name="tglawal" id="tglawal" class="form-control" />
+              </div>
+            </div>
 
- </div>
+            <div class="col-lg-3">
+              <div class="form-group">
+                <!-- <input type="text" name="item_code" class="form-control" id="item_code_create" hidden> -->
+                <label for="label">Tanggal Akhir</label>
+                <input type="date" name="tglakhir" id="tglakhir" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+              <div class="form-group">
+                <input type="text" name="item_code" class="form-control" id="item_code_create" hidden>
+                <label for="label">Status</label>
+                <select name="status" class="form-control" id="status" autofocus required>
+                  <option value="">Pilih Status</option>
+                  <option value="0">Peminjaman</option>
+                  <option value="1">Pengembalia</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-outline-success btn-lg" name="laporan" type="submit"><i class="fa fa-search">Cetak Laporan Pertanggal</i>
+					</button> 
+              	<?php echo form_close() ?>
+          
+           <div class="row px-3 py-0">
+            <div class="col-lg-6">
+              <div class="form-group">
+           
+              	
+                <!-- <a id="masuk" href="" onclick="this.href='/laporan/cetak/'+ document.getElementById('tglawal').value + '/' + 
+                document.getElementById('tglakhir').value +'/'+ document.getElementById('status').value " target="_BLANK" class="btn btn-primary col-md-12">Cetak Laporan Pertanggal <i class="fas fa-print"></i></a> -->
+              </div>
+            </div>
+          </div>
+</form>
+
+
 </section>

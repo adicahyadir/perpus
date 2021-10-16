@@ -11,6 +11,7 @@ class Laporan extends CI_Controller {
 		//load model admin
 		$this->load->model('m_admin');
 		$this->load->model('m_anggota');
+		$this->load->model('m_peminjaman');
 	}
 
 
@@ -18,6 +19,7 @@ class Laporan extends CI_Controller {
 	{
 		if($this->m_admin->logged_id())
 		{
+
 			$isi['content'] = 'laporan/v_laporan';
 			$isi['title']   = 'Laporan';
 			$isi['data'] = $this->db->get('anggota')->result();
@@ -30,6 +32,18 @@ class Laporan extends CI_Controller {
 
 		}
 		
+}
+	public function cetak()
+    {
+	// $tglawal = $this->input->post('tglawal');
+	// $tglakhir = $this->input->post('tglakhir');
+	// $status = $this->input->post('status');
+    	$tgl = $this->input->get('tglawal');
+		$tglhir = $this->input->get('tglakhir');
+		$status = $this->input->get('status');
+	// $isi['title']= 'Laporan';
+	$isi['cetak']= $this->m_peminjaman->cetak($tgl,$tglhir,$status);
+	// $isi['asup'] = $this->m_peminjaman->cetak($tgl, $tglhir,$status , 'tglawal', 'tglakhir', 'status');
+	$this->load->view('laporan/V_report',$isi);
 	}
-	
 }

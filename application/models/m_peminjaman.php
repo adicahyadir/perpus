@@ -49,4 +49,16 @@
 		$this->db->where($field, $id_pinjam);
 		$this->db->update($table, $data);
 	}
+
+	public function cetak($tgl,$tglakhir,$status)
+    {
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->join('anggota', 'anggota.id_anggota=peminjaman.id_anggota');
+    // $this->db->where('peminjaman.tgl_pinjam', $tgl);
+    // $this->db->where('peminjaman.pertgl <=', date($tglakhir));
+    // $this->db->where('peminjaman.status', $status);
+	return $this->db->get()->result_array();
+
  }
+}
