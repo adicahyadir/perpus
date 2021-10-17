@@ -46,7 +46,7 @@
 	  		<td><?=$value['pinjam_id'] ?></td>
 	  		<td>[<?=$value['nis'] ?>] <?=$value['nama_anggota'] ?></td>
 	  		<td><?=$value['buku_id'] ?></td>
-	  		<td><?=$value['judul'] ?> </td>
+	  		<td><?=$value['judul'] ?></td>
 	  		<td><?=date("d-m-Y",$value['tgl_pinjam']) ?></td>
 	  		<?php if ($value['tgl_balik'] == 0){ ?>
 	  			<td>-</td>

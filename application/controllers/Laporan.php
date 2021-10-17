@@ -10,7 +10,8 @@ class Laporan extends CI_Controller {
 		$this->load->library('form_validation');
 		//load model admin
 		$this->load->model('m_admin');
-		$this->load->model('m_laporan'); 
+		$this->load->model('m_laporan');
+		$this->load->model('m_anggota');
 	}
 
 
@@ -21,7 +22,7 @@ class Laporan extends CI_Controller {
 
 			$isi['content'] = 'laporan/v_laporan';
 			$isi['title']   = 'Laporan';
-			$isi['data'] = $this->db->get('anggota')->result();
+			// $isi['data'] = $this->db->get('anggota')->result();
 			$this->load->view('v_dashboard', $isi);
 
 		}else{
@@ -31,6 +32,14 @@ class Laporan extends CI_Controller {
 
 		}
 		
+	}
+
+	public function L_anggota()
+	{
+			$isi['content'] = 'laporan/v_laporan_anggota';
+			$isi['title']   = 'Laporan';
+			$isi['data'] = $this->db->get('anggota')->result();
+			$this->load->view('v_dashboard', $isi);
 	}
 
 	public function cetak()

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2021 at 05:51 AM
+-- Generation Time: Oct 17, 2021 at 02:26 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -42,8 +42,8 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
-(25, '5520118040', 'Adi', 'Laki Laki', '7', 'Cipanas', '0812345678'),
-(26, '5520118041', 'Cahyadi', 'Laki Laki', '8', 'Hanjawar', '0823456789');
+(26, '5520118041', 'Cahyadi', 'Laki Laki', '8', 'Hanjawar', '0823456789'),
+(27, '5520118078', 'Ridho', 'Laki Laki', '8', 'CIkalong', '0889996565');
 
 -- --------------------------------------------------------
 
@@ -84,17 +84,16 @@ CREATE TABLE `databuku` (
   `id_penerbit` int(11) NOT NULL,
   `id_kategori` int(11) NOT NULL,
   `id_rak` int(11) NOT NULL,
-  `id_bahasa` int(11) NOT NULL,
-  `gambar` text NOT NULL
+  `id_bahasa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `databuku`
 --
 
-INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`, `gambar`) VALUES
-(21, 'BK001', '519.6.SUP.M.1', 'Mudah dan Cepat Membuat Program Skripsi dengan VB 2012', '2012-01-01', '60', 4, 8, 5, 7, 19, 15, ''),
-(22, 'BK002', '	519.8.pet.b.1', 'Basics of Reservoir Simulation with the Eclipse Reservoir Simulator', '2006-02-08', '35', 1, 9, 6, 8, 20, 19, '');
+INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`) VALUES
+(0, 'BK001', '519.6.SUP.M.1', 'Mudah dan Cepat Membuat Program Skripsi dengan VB 2012', '2012-01-01', '60', 0, 9, 5, 11, 20, 15),
+(22, 'BK002', '	519.8.pet.b.1', 'Basics of Reservoir Simulation with the Eclipse Reservoir Simulator', '2006-02-08', '35', -4, 9, 6, 8, 20, 19);
 
 -- --------------------------------------------------------
 
@@ -112,7 +111,7 @@ CREATE TABLE `denda` (
 --
 
 INSERT INTO `denda` (`id_denda`, `harga_denda`) VALUES
-(1, '1000');
+(1, '600');
 
 -- --------------------------------------------------------
 
@@ -158,7 +157,6 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'administrator'),
 (2, 'petugas', 'petugas', 'afb91ef692fd08c445e8cb1bab2ccf9c', 'petugas');
 
 -- --------------------------------------------------------
@@ -183,14 +181,23 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id_pinjam`, `pinjam_id`, `id_anggota`, `buku_id`, `tgl_pinjam`, `tgl_balik`, `denda`, `status`) VALUES
-(29, '11', 11, '1', 1, 1, 1, 0),
 (30, 'PJ012', 23, 'BK002', 1633794085, 0, 0, 0),
 (31, 'PJ013', 23, 'BK001', 1633794674, 1633794745, 0, 0),
 (32, 'PJ014', 23, 'BK001', 1633794758, 1633795025, 0, 0),
 (33, 'PJ015', 25, 'BK001', 1634013930, 1634049741, 0, 0),
 (34, 'PJ016', 26, 'BK002', 1634014694, 1634014716, 0, 0),
-(35, 'PJ017', 26, 'BK001', 1634014756, 0, 0, 1),
-(36, 'PJ018', 25, 'BK002', 1634050640, 0, 0, 1);
+(35, 'PJ017', 26, 'BK001', 1634014756, 1634310128, 500, 0),
+(36, 'PJ018', 25, 'BK002', 1634050640, 0, 0, 1),
+(37, 'PJ019', 27, 'BK001', 1634310166, 0, 0, 1),
+(38, 'PJ020', 26, 'BK002', 1634310482, 1634310579, 0, 0),
+(39, 'PJ020', 26, 'BK001', 1634310482, 1634310498, 0, 0),
+(40, 'PJ020', 26, 'BK001', 1634310482, 1634310495, 0, 0),
+(41, 'PJ021', 26, 'BK001', 1634449369, 0, 0, 1),
+(42, 'PJ021', 26, 'BK002', 1634449369, 0, 0, 1),
+(43, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
+(44, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
+(45, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
+(46, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -248,11 +255,9 @@ CREATE TABLE `rak` (
 --
 
 INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
-(19, '1', '4'),
+(19, '2', '4'),
 (20, '2', '1'),
-(21, '3', '4'),
-(23, '4', '1'),
-(24, '6', '3');
+(21, '3', '4');
 
 -- --------------------------------------------------------
 
@@ -539,7 +544,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `bahasa`
@@ -575,7 +580,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `penerbit`
@@ -593,7 +598,7 @@ ALTER TABLE `pengarang`
 -- AUTO_INCREMENT for table `rak`
 --
 ALTER TABLE `rak`
-  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

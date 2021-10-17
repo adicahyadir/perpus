@@ -59,14 +59,30 @@
             </div>
         </div>
     </li>
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#memek"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa fa-print"></i>
+            <span>Laporan</span>
+        </a>
+        <div id="memek" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Laporan</h6>
+                <a class="collapse-item" href="<?= base_url()?>laporan">Laporan Buku</a>
+                <a class="collapse-item" href="<?= base_url()?>laporan/L_anggota">Laporan Anggota</a>
+             
+            </div>
+        </div>
+    </li>
     
     <!-- Divider -->
-    <hr class="sidebar-divider">
+  <!--   <hr class="sidebar-divider">
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url()?>laporan">
             <i class="far fa-file-alt"></i>
             <span>Laporan</span></a>
-    </li>
+    </li> -->
 </section>
 </aside>
