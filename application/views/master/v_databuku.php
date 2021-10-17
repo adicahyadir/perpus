@@ -3,7 +3,7 @@
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Data Buku</h1>
     <p class="mb-4">Daftar Buku Perpustakaan 
-        <button class="btn btn-outline-info fas fa-file-pdf" onclick="printDiv('printableArea')" aria-hidden="true"></button></p>
+        <!-- <button class="btn btn-outline-info fas fa-file-pdf" onclick="printDiv('printableArea')" aria-hidden="true"></button> --></p>
 
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">

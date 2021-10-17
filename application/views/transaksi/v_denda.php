@@ -3,6 +3,8 @@
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Denda</h1>
     <p class="mb-4">Harga Denda</p>
+    <?= $this->session->flashdata('info_dd');?>
+   
 
     <!-- DataTales Example -->
   <!--   <div class="mb-4" style="position: float-right">
@@ -11,7 +13,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Denda</h6>
-            <?= $this->session->flashdata('info_dd');?>
+            
         </div>
         <div class="card-body">
             <div class="table-responsive">

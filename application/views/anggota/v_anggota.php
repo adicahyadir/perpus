@@ -3,7 +3,7 @@
  <!-- Page Heading -->
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Keanggotaan</h1>
-    <p class="mb-4">Daftar anggota Perpustakaan <button class="btn btn-outline-info fas fa-file-pdf" aria-hidden="true"></button></p> 
+    <p class="mb-4">Daftar anggota Perpustakaan <!-- <button class="btn btn-outline-info fas fa-file-pdf" aria-hidden="true"></button> --></p> 
  
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">
