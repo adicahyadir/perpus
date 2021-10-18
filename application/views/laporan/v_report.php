@@ -36,7 +36,7 @@
                 <td><?=$p['buku_id'] ?></td>
                 <td><?=$p['id_anggota'] ?></td>
                 <td><?=$p['nama_anggota'] ?></td>
-                <td><?=date("Y-m-d",$p['tgl_pinjam']) ?></td>
+                <td><?=date("Y-m-d",$p['tgl_pinjam']) ?></td>	
                 <td><?=$p['status'] ?></td>
 
 </tr>
