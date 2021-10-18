@@ -21,14 +21,14 @@
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Rak</label>
           <div class="col-sm-10">
-            <input type="number" name="nama_rak" class="form-control" value="<?= $data['nama_rak'] ?>" required>
+            <input type="text" name="nama_rak" class="form-control" value="<?= $data['nama_rak'] ?>" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Baris Rak</label>
+          <label for="inputPassword3" class="col-sm-2 control-label">Kategori</label>
           <div class="col-sm-10">
-            <input type="number" name="baris_rak" class="form-control" value="<?= $data['baris_rak'] ?>" required>
+            <input type="text" name="baris_rak" class="form-control" value="<?= $data['baris_rak'] ?>" required>
           </div>
         </div>
 

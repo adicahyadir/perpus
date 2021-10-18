@@ -10,7 +10,7 @@ public function __construct()
 		$this->load->model('m_bukuz');
 	}
 	public function index()
-	{
+	{ 
 		$data['title']   = 'Rak Buku';
 		$data['bukuz'] = $this->m_bukuz->get_all();
 			

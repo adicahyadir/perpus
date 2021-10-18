@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2021 at 02:26 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Oct 18, 2021 at 05:24 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,8 +42,11 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id_anggota`, `nis`, `nama_anggota`, `jenkel`, `kelas`, `alamat`, `no_hp`) VALUES
-(26, '5520118041', 'Cahyadi', 'Laki Laki', '8', 'Hanjawar', '0823456789'),
-(27, '5520118078', 'Ridho', 'Laki Laki', '8', 'CIkalong', '0889996565');
+(19, '5520118046', 'Santi S', 'Perempuan', '7', 'Colibah', '08122356789'),
+(21, '5520118047', 'Cahyani', 'Perempuan', '8', 'Loji Cinengah', '08898900123'),
+(22, '5520118040', 'Rully', 'Laki-Laki', '9', 'Cibodas', '081234567855'),
+(23, '5520118042', 'Rizki F', 'Laki-Laki', '8', 'Cipanas Lanbaw', '089282688881'),
+(24, '5520118088', 'Rahma sukma', 'Perempuan', '6', 'Puncak CIloto', '089663915964');
 
 -- --------------------------------------------------------
 
@@ -84,16 +87,20 @@ CREATE TABLE `databuku` (
   `id_penerbit` int(11) NOT NULL,
   `id_kategori` int(11) NOT NULL,
   `id_rak` int(11) NOT NULL,
-  `id_bahasa` int(11) NOT NULL
+  `id_bahasa` int(11) NOT NULL,
+  `gambar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `databuku`
 --
 
-INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`) VALUES
-(0, 'BK001', '519.6.SUP.M.1', 'Mudah dan Cepat Membuat Program Skripsi dengan VB 2012', '2012-01-01', '60', 0, 9, 5, 11, 20, 15),
-(22, 'BK002', '	519.8.pet.b.1', 'Basics of Reservoir Simulation with the Eclipse Reservoir Simulator', '2006-02-08', '35', -4, 9, 6, 8, 20, 19);
+INSERT INTO `databuku` (`id_buku`, `buku_id`, `isbn`, `judul`, `tahun`, `halaman`, `jumlah`, `id_pengarang`, `id_penerbit`, `id_kategori`, `id_rak`, `id_bahasa`, `gambar`) VALUES
+(0, 'BK005', '978-979-128-365-6', 'Bangsa gagal ; Mencari Identitas kebangsaan', '2008-01-18', '212', 10, 14, 9, 12, 24, 15, ''),
+(23, 'BK001', '978-979-107-853-5', 'Akuntansi Pengantar 1', '2009-01-18', '232', 6, 9, 6, 14, 19, 15, ''),
+(24, 'BK002', '978-979-328-876-5', 'Aplikasi Klinis Indul Ovulasi & Stimulasi Ovariu', '2013-01-18', '148', 6, 10, 7, 4, 22, 15, ''),
+(25, 'BK003', '978-602-867-404-1', 'Aplikasi Praktis Asuhan Keperawatan', '2012-01-18', '117', 3, 11, 7, 8, 22, 15, ''),
+(26, 'BK004', '978-979-293-215-7', 'A-Z Psikologi : Berbagi Kumpulan Topik Psikologi', '2012-01-18', '268', 3, 12, 8, 2, 23, 15, '');
 
 -- --------------------------------------------------------
 
@@ -129,14 +136,19 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(7, 'Teknologi'),
-(8, 'Komputer'),
-(9, 'Filsafat dan Psikologi'),
-(10, 'Bahasa'),
-(11, 'Sains dan Matematika'),
+(1, 'Publikasi umum,Informasi umum dan komputer'),
+(2, 'Filsafat dan psikologi'),
+(3, 'Agama'),
+(4, 'Sains'),
+(6, 'Fisika'),
+(7, 'Kimia'),
+(8, 'Biologi'),
+(9, 'Kesenian dan Rekreasi'),
+(10, 'Musik'),
+(11, 'Fotografi, Film, video'),
 (12, 'Sejarah'),
-(13, 'Agama'),
-(14, 'Kesenian dan Rekreasi');
+(13, 'Geografi'),
+(14, 'Ekonomi');
 
 -- --------------------------------------------------------
 
@@ -157,6 +169,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`) VALUES
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'administrator'),
 (2, 'petugas', 'petugas', 'afb91ef692fd08c445e8cb1bab2ccf9c', 'petugas');
 
 -- --------------------------------------------------------
@@ -173,31 +186,20 @@ CREATE TABLE `peminjaman` (
   `tgl_pinjam` int(11) NOT NULL,
   `tgl_balik` int(11) NOT NULL,
   `denda` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL,
+  `pertgl` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `peminjaman`
 --
 
-INSERT INTO `peminjaman` (`id_pinjam`, `pinjam_id`, `id_anggota`, `buku_id`, `tgl_pinjam`, `tgl_balik`, `denda`, `status`) VALUES
-(30, 'PJ012', 23, 'BK002', 1633794085, 0, 0, 0),
-(31, 'PJ013', 23, 'BK001', 1633794674, 1633794745, 0, 0),
-(32, 'PJ014', 23, 'BK001', 1633794758, 1633795025, 0, 0),
-(33, 'PJ015', 25, 'BK001', 1634013930, 1634049741, 0, 0),
-(34, 'PJ016', 26, 'BK002', 1634014694, 1634014716, 0, 0),
-(35, 'PJ017', 26, 'BK001', 1634014756, 1634310128, 500, 0),
-(36, 'PJ018', 25, 'BK002', 1634050640, 0, 0, 1),
-(37, 'PJ019', 27, 'BK001', 1634310166, 0, 0, 1),
-(38, 'PJ020', 26, 'BK002', 1634310482, 1634310579, 0, 0),
-(39, 'PJ020', 26, 'BK001', 1634310482, 1634310498, 0, 0),
-(40, 'PJ020', 26, 'BK001', 1634310482, 1634310495, 0, 0),
-(41, 'PJ021', 26, 'BK001', 1634449369, 0, 0, 1),
-(42, 'PJ021', 26, 'BK002', 1634449369, 0, 0, 1),
-(43, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
-(44, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
-(45, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1),
-(46, 'PJ022', 27, 'BK002', 1634449381, 0, 0, 1);
+INSERT INTO `peminjaman` (`id_pinjam`, `pinjam_id`, `id_anggota`, `buku_id`, `tgl_pinjam`, `tgl_balik`, `denda`, `status`, `pertgl`) VALUES
+(43, 'PJ001', 22, 'BK001', 1634379800, 1634570297, 0, 0, '2021-10-18 15:18:17'),
+(44, 'PJ001', 22, 'BK002', 1634379800, 1634536759, 0, 0, '2021-10-18 05:59:19'),
+(45, 'PJ002', 22, 'BK002', 1634570307, 0, 0, 1, '2021-10-18 15:18:27'),
+(46, 'PJ003', 19, 'BK003', 1634570341, 0, 0, 1, '2021-10-18 15:19:01'),
+(47, 'PJ004', 24, 'BK002', 1634570350, 0, 0, 1, '2021-10-18 15:19:10');
 
 -- --------------------------------------------------------
 
@@ -216,8 +218,11 @@ CREATE TABLE `penerbit` (
 --
 
 INSERT INTO `penerbit` (`id_penerbit`, `nama_penerbit`, `alamat`) VALUES
-(5, 'Elex Media Komputindo', 'Jakarta'),
-(6, 'Department of Mathematics , Univ. of Bergen', 'Jawa barat');
+(6, 'Gava Media', 'Yogyakarta'),
+(7, 'Sagung Seto', 'Jakarta'),
+(8, 'Andi Offset', 'Tanggerang'),
+(9, 'LKiS', 'Yogyakarta'),
+(10, 'Rajagfindo Persada', 'Depok');
 
 -- --------------------------------------------------------
 
@@ -235,8 +240,12 @@ CREATE TABLE `pengarang` (
 --
 
 INSERT INTO `pengarang` (`id_pengarang`, `nama_pengarang`) VALUES
-(8, 'Ir. Yuniar Supardi'),
-(9, 'Oystein Pettersen');
+(9, 'Supardi'),
+(10, 'Samsulhadi'),
+(11, 'Komang Ayu Heni'),
+(12, 'Zainul Anwar'),
+(13, 'Greg barton'),
+(14, 'Nasruddin Anshoriy');
 
 -- --------------------------------------------------------
 
@@ -255,9 +264,12 @@ CREATE TABLE `rak` (
 --
 
 INSERT INTO `rak` (`id_rak`, `nama_rak`, `baris_rak`) VALUES
-(19, '2', '4'),
-(20, '2', '1'),
-(21, '3', '4');
+(19, '1A', 'Ekonomi'),
+(20, '2B', 'Teknologi'),
+(21, '1B', 'Psikologi'),
+(22, '2A', 'Kesehatan'),
+(23, '1C', 'Filsafat dan Psikologi'),
+(24, '2C', 'Sejarah');
 
 -- --------------------------------------------------------
 
@@ -544,7 +556,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `bahasa`
@@ -556,7 +568,7 @@ ALTER TABLE `bahasa`
 -- AUTO_INCREMENT for table `databuku`
 --
 ALTER TABLE `databuku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `denda`
@@ -580,25 +592,25 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `penerbit`
 --
 ALTER TABLE `penerbit`
-  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_penerbit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pengarang`
 --
 ALTER TABLE `pengarang`
-  MODIFY `id_pengarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pengarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `rak`
 --
 ALTER TABLE `rak`
-  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

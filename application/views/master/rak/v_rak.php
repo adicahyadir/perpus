@@ -21,7 +21,7 @@
                         <tr> 
                             <th>No</th>
                             <th>Rak</th>
-                            <th>Baris Rak</th>
+                            <th>Kategori</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,7 +32,7 @@
                         <tr>
                           <td><?= $no++;?></td>
                           <td>Rak <?= $row->nama_rak;?></td>
-                          <td>Baris <?= $row->baris_rak;?></td>
+                          <td><?= $row->baris_rak;?></td>
                           <td>
                               <a href="<?= base_url()?>rak/edit/<?= $row->id_rak;?>"><button class="btn btn-success"><i class="fa fa-edit"></i>Edit</button></a>
                               <a href="<?= base_url()?>rak/hapus/<?= $row->id_rak;?>" onclick="return confirm('Yakin untuk Menghapus Data?')" ><button class="btn btn-danger"><i class="fa fa-trust"></i>Hapus</button></a>
@@ -60,11 +60,11 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama Rak</label>
-                    <input type="number" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rak 1" required>
+                    <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rak 1" required>
                 </div>
                  <div class="form-group">
-                    <label for="exampleInputEmail1">Baris Rak</label>
-                    <input type="number" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Baris 2" required>
+                    <label for="exampleInputEmail1">Kategori</label>
+                    <input type="text" name="baris_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sejarah" required>
                 </div>
             </div>
           </div>        
