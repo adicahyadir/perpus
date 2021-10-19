@@ -60,7 +60,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama Rak</label>
-                    <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rak 1" required>
+                    <input type="text" name="nama_rak" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rak 1C" required>
                 </div>
                  <div class="form-group">
                     <label for="exampleInputEmail1">Kategori</label>

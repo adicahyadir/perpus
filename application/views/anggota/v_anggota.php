@@ -1,21 +1,14 @@
-
 <section class="content">
  <!-- Page Heading -->
  <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Keanggotaan</h1>
-    <p class="mb-4">Daftar anggota Perpustakaan <!-- <button class="btn btn-outline-info fas fa-file-pdf" aria-hidden="true"></button> --></p> 
+    <p class="mb-4">Daftar anggota Perpustakaan </p> 
  
     <!-- DataTales Example -->
     <div class="mb-4" style="position: float-right">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Tambah</a>
             <?= $this->session->flashdata('info_a');?>
-
     </div>
-     <!-- <?php
-      if (!empty($this->session->flashdata('info'))) {?>
-          <div class="alert alert-success" role="alert"><?= $this->session->flashdata('info');?></div>   
-        <?php }
-      ?>  -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Anggota</h6>

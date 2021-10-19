@@ -107,14 +107,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <!-- <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a> -->
-                               <!--  <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a> -->
+                        
                                <!--  <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="<?= base_url('login/logout')?>" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -135,16 +128,6 @@
             </section>
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-           <!--  <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; MTs Sa Miftahul Falah 2021</span>
-                    </div>
-                </div>
-            </footer> -->
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->

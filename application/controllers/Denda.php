@@ -65,7 +65,7 @@ class Denda extends CI_Controller {
 	{
 		$isi['title'] 		= 'Edit Harga Denda';
 		$isi['content'] 	= 'transaksi/edit_denda';
-		$isi['judul'] 		= 'Form Edit Buku' ;
+		$isi['judul'] 		= 'Form Edit Denda' ;
 		$isi['data'] 		= $this->m_denda->edit($id);
 		$this->load->view('v_dashboard', $isi);
 	}
