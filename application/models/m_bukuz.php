@@ -20,11 +20,11 @@
         $this->db->join('rak', 'rak.id_rak = ' . 'databuku' . '.id_rak');
         $this->db->join('bahasa', 'bahasa.id_bahasa = ' . 'databuku' . '.id_bahasa');
 
-			$this->db->like('judul',$keyword);
-			$this->db->or_like('isbn',$keyword);
-			$this->db->or_like('nama_penerbit',$keyword);
+			// $this->db->like('judul',$keyword);
+			// $this->db->or_like('isbn',$keyword);
+			// $this->db->or_like('nama_penerbit',$keyword);
 			$this->db->or_like('nama_kategori',$keyword);
-			$this->db->or_like('nama_pengarang',$keyword);
+			// $this->db->or_like('nama_pengarang',$keyword);
 			 return $this->db->get()->result_array();
 			
 		}

@@ -49,8 +49,7 @@
 </nav>
 <div class="container">
     <div class="jumbotron">
-		<h1>SEARCH BY</h1>
-		<h4>Kategori | Penerbit | Pengarang | Judul | ISBN </h4>
+		<h1>SEARCH BY - Kategori</h1> 
 		<br>
 		<div class="Search justify-content-center">
 		<div class="row">
